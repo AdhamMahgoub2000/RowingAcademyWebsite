@@ -1,0 +1,91 @@
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="robots" content="index, follow" />
+    <meta name="description" content="Find your way through the river" />
+    <title>Rowin Academy</title>
+    <link rel="stylesheet" href="css/all.min.css" />
+    <link rel="stylesheet" href="css/bootstrap.min.css" />
+    <link rel="stylesheet" href="css/adhamCSS.css" />
+  </head>
+
+  <body>
+    <section class="d-flex justify-content-center">
+      <div class="container shadow rounded m-5 p-5" style="width: 60%">
+        <form id="registerForm" class="px-4 py-3">
+          <div class="mb-3">
+            <label class="form-label">Email</label>
+            <input
+              type="email"
+              class="form-control"
+              id="email_register"
+              required
+            />
+          </div>
+          <span id="email_error_register"></span>
+          <div class="mb-3">
+            <label class="form-label">Full Name</label>
+            <input type="text" class="form-control" id="name_register" />
+          </div>
+          <div class="mb-3">
+            <label class="form-label">Phone Number</label>
+            <input
+              type="text"
+              class="form-control"
+              id="number_register"
+              required
+            />
+          </div>
+          <span id="number_error_register"></span>
+          <div>
+            <div class="mb-3">
+              <label class="form-label">Password</label>
+              <input
+                type="password"
+                class="form-control"
+                id="password_register"
+                required
+              />
+            </div>
+            <span id="password_error_register"></span>
+          </div>
+          <button type="submit" class="btn btn-success">Register</button>
+        </form>
+      </div>
+    </section>
+    <script>
+      document
+        .getElementById("registerForm")
+        .addEventListener("submit", async function (event) {
+          event.preventDefault();
+
+          let emailInput = document.getElementById("email_register");
+          let nameInput = document.getElementById("name_register");
+          let numberInput = document.getElementById("number_register");
+          let passwordInput = document.getElementById("password_register");
+
+          let emailError = document.getElementById("email_error_register");
+          let numberError = document.getElementById("number_error_register");
+          let passwordError = document.getElementById(
+            "password_error_register",
+          );
+
+          let isEmailValid = checkEmail(emailInput, emailError);
+          let isNumberValid = checkNumber(numberInput, numberError);
+          let isPasswordValid = checkPassword(passwordInput, passwordError);
+
+          if (!isEmailValid || !isPasswordValid || !isNumberValid) return;
+
+          addUser(
+            emailInput.value,
+            numberInput.value,
+            nameInput.value,
+            passwordInput.value,
+          );
+        });
+    </script>
+    <script src="js/bootstrap.bundle.min.js"></script>
+    <script src="js/all.min.js"></script>
+    <script src="js/auth.js"></script>
+  </body>
+</html>

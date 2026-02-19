@@ -1,0 +1,115 @@
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="robots" content="index, follow" />
+    <meta name="description" content="Find your way through the river" />
+    <title>Rowin Academy</title>
+    <link rel="stylesheet" href="css/all.min.css" />
+    <link rel="stylesheet" href="css/bootstrap.min.css" />
+    <link rel="stylesheet" href="css/adhamCSS.css" />
+  </head>
+
+  <body>
+    <section class="d-flex justify-content-center">
+      <div class="container shadow rounded m-5 p-5" style="width: 60%">
+        <form class="px-4 py-3" id="loginForm">
+          <div class="mb-3">
+            <label for="email" class="form-label">Email address</label>
+            <input
+              type="email"
+              class="form-control"
+              id="email"
+              placeholder="email@example.com"
+            />
+          </div>
+          <span
+            id="email_error"
+            style="font-size: smaller; width: 100px"
+          ></span>
+          <div class="mb-3">
+            <label for="password" class="form-label">Password</label>
+            <input
+              type="password"
+              class="form-control"
+              id="password"
+              placeholder="Password"
+            />
+          </div>
+          <span
+            id="password_error"
+            style="font-size: smaller; width: 100px"
+          ></span>
+          <div class="mb-3">
+            <div class="form-check">
+              <input
+                type="checkbox"
+                class="form-check-input"
+                id="dropdownCheck"
+              />
+              <label class="form-check-label" for="dropdownCheck">
+                Remember me
+              </label>
+            </div>
+          </div>
+          <button type="submit" class="btn btn-primary">Sign in</button>
+        </form>
+        <div class="dropdown-divider"></div>
+        <a class="dropdown-item" href="register.html"
+          >New around here? Sign up</a
+        >
+      </div>
+      <div>
+        <h1 id="islogged"></h1>
+      </div>
+    </section>
+    <script src="auth.js"></script>
+    <script>
+      document
+        .getElementById("loginForm")
+        .addEventListener("submit", async function (event) {
+          event.preventDefault();
+
+          let emailInput = document.getElementById("email");
+          let emailError = document.getElementById("email_error");
+
+          let passwordInput = document.getElementById("password");
+          let passwordError = document.getElementById("password_error");
+
+          let rememberMe = document.getElementById("dropdownCheck").checked;
+
+          let isEmailValid = checkEmail(emailInput, emailError);
+
+          let isPasswordValid = checkPassword(passwordInput, passwordError);
+          if (!isPasswordValid)
+            Errorspan("Password must be At least 8 char", passwordError);
+
+          if (!isEmailValid || !isPasswordValid) {
+            return;
+          }
+          emailError.hidden = true;
+          passwordError.hidden = true;
+          let user_auth = await checkUserpass(
+            emailInput.value,
+            passwordInput.value,
+          );
+          if (user_auth === "User is Not Found") {
+            Errorspan("User Is Not Found", emailError);
+          } else if (!user_auth) Errorspan("Password Is Wrong", passwordError);
+          else {
+            let userData = await getUserdataEmail(emailInput.value);
+            let user = userData[0];
+            Errorspan(`welcome ${user.name}`, passwordError, "green");
+            if (rememberMe) {
+              saveLoginSuccess(user, "index.html");
+            } else {
+              sessionStorage.setItem("user", JSON.stringify(user));
+              sessionStorage.setItem("isLoggedIn", "true");
+            }
+          }
+        });
+    </script>
+    <script src="js/bootstrap.bundle.min.js"></script>
+    <script src="js/all.min.js"></script>
+    <script src="js/auth.js"></script>
+  </body>
+</html>
