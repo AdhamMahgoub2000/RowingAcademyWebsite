@@ -1,5 +1,6 @@
 const api_url =
-"https://mkxzgvwvftzimaugwzvn.supabase.co/rest/v1/Clients";
+"https://mkxzgvwvftzimaugwzvn.supabase.co/rest/v1/";
+const Clients_api_url = api_url +"Clients"
 const api_key = "sb_publishable_EY8_jS3efnS8mEt2aFGoHA_gDkN6K8v";
 const auth = "bearer " + api_key;
 const headers = {
@@ -40,13 +41,13 @@ return true;
         }}
 
 let getUserdataEmail = async function (email_address) {
-        let email_url = api_url + "?email_address=eq." + email_address;
+        let email_url = Clients_api_url + "?email_address=eq." + email_address;
         let client_res = await fetch(email_url, { headers });
         let client_data = await client_res.json();
         return client_data;
         };
 let getUserdataNumber = async function (number) {
-        let number_url = api_url + "?mobile_number=eq." + number;
+        let number_url = Clients_api_url + "?mobile_number=eq." + number;
         let client_res = await fetch(number_url, { headers });
         let client_data = await client_res.json();
         return client_data;
