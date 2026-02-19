@@ -79,7 +79,7 @@ let addUser = async function(email,number,name, password){
       Errorspan("Number already registered", numberError);
       return;
     }
-    let response = await fetch(api_url, {
+    let response = await fetch(Clients_api_url, {
             method: "POST",
             headers: headers,
             body: JSON.stringify({
