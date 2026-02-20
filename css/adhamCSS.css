@@ -3,6 +3,8 @@
     --blue-color :rgb(34, 56, 145);
     --orange-color : rgb(248, 158, 69);
 }
+
+
 .nav-link:hover{
     color: var(--light-color);
 }
