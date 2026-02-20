@@ -45,4 +45,23 @@
   object-fit: cover;   
   border-radius: 20px;
 }
+.achi{
+    background-color: var(--blue-color);
+    color: white;
+    gap: 5rem;
+}
+.achi h1{
+    display: flex;
+    justify-content: center;
+}
+.achi p{
+    color : rgba(241, 244, 255, 0.877);
+    font-size: 0.9rem;
+    text-align: center;
+}
 /* end aboutUs */
+@media screen and (max-width: 768px){
+    *{
+        font-size: 0.8rem;
+    }
+}
