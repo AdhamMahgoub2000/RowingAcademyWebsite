@@ -129,13 +129,13 @@ let addUser = async function(email,number,name, password){
     if (response.ok) {
      let newUser = await getUserdataEmail(email);
      Errorspan(`welcome ${name}`,passwordError,"green")
-     saveLoginSuccess(newUser[0],"index.html");
+     saveLoginSuccess(newUser[0],"01-home.html");
      console.log("Redirecting to home page in 2 seconds...");
     } else {
       Errorspan("Registration failed", passwordError);
     }
 }
-function saveLoginSuccess(userObject, redirectUrl = "index.html") {
+function saveLoginSuccess(userObject, redirectUrl = "01-home.html") {
     localStorage.setItem("user", JSON.stringify(userObject));
     localStorage.setItem("isLoggedIn", "true");
 

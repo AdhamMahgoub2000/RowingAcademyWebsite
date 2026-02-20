@@ -8,7 +8,6 @@
     <link rel="stylesheet" href="css/bootstrap.min.css" />
     <link rel="stylesheet" href="css/adhamCSS.css" />
     <link rel="stylesheet" href="css/karimCSS.css" />
-
   </head>
 
   <body>
@@ -64,7 +63,7 @@
         <h1 id="islogged"></h1>
       </div>
     </section>
-        <!-- FOOTER -->
+    <!-- FOOTER -->
     <footer class="footer">
       <div class="footer-container">
         <!-- Column 1 -->
@@ -180,7 +179,7 @@
             const params = new URLSearchParams(window.location.search);
             const redirectURL = params.get("redirect")
               ? decodeURIComponent(params.get("redirect"))
-              : "index.html";
+              : "01-home.html";
 
             if (rememberMe) {
               localStorage.setItem("user", JSON.stringify(user));
