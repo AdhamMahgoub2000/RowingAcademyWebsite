@@ -8,6 +8,39 @@ const headers = {
         Authorization: auth,
         "Content-Type": "application/json",
         };
+function updateAuthUI() {
+  let user = localStorage.getItem("user") || sessionStorage.getItem("user");
+  user = user ? JSON.parse(user) : null;
+  const loginIcon = document.querySelector(".login-icon");
+  const registerIcon = document.querySelector(".register-icon");
+  const profileDropdown = document.querySelector(".profile-icon");
+  const userNameSpan = document.querySelector(".user-name");
+  
+
+  if (user) {
+    if (loginIcon) loginIcon.style.display = "none";
+    if (registerIcon) registerIcon.style.display = "none";
+
+    if (profileDropdown) profileDropdown.style.display = "inline-block";
+
+    if (userNameSpan) userNameSpan.textContent = `Hello, ${user.name}`;
+  } else {
+    if (loginIcon) loginIcon.style.display = "inline-block";
+    if (registerIcon) registerIcon.style.display = "inline-block";
+
+    if (profileDropdown) profileDropdown.style.display = "none";
+
+    if (userNameSpan) userNameSpan.textContent = "";
+  }
+
+}
+
+document.addEventListener("DOMContentLoaded", updateAuthUI);
+const logoutBtn = document.querySelector(".logout-btn");
+
+if (logoutBtn) {
+  logoutBtn.addEventListener("click",logout);
+}
 let Errorspan = function(message, span_element,color="red"){
         span_element.textContent = message;
         span_element.style.color =color;
@@ -79,7 +112,7 @@ let addUser = async function(email,number,name, password){
       Errorspan("Number already registered", numberError);
       return;
     }
-    let response = await fetch(api_url, {
+    let response = await fetch(Clients_api_url, {
             method: "POST",
             headers: headers,
             body: JSON.stringify({
@@ -118,7 +151,7 @@ function updateNavbar() {
     document.getElementById("logoutLink").style.display =
         isLoggedIn ? "inline-block" : "none";
 }
-function logout(redirectUrl = "") {
+function logout() {
 
     localStorage.removeItem("user");
     localStorage.removeItem("isLoggedIn");
@@ -126,5 +159,5 @@ function logout(redirectUrl = "") {
     sessionStorage.removeItem("user");
     sessionStorage.removeItem("isLoggedIn");
 
-    window.location.href = redirectUrl;
+    window.location.reload();
 }

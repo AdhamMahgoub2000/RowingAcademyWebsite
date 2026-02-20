@@ -1,0 +1,74 @@
+:root{
+    --light-color : rgb(19, 59, 222);
+    --blue-color :rgb(34, 56, 145);
+    --orange-color : rgb(248, 158, 69);
+}
+/* start aboutUs */
+.landing{
+    background-color: var(--blue-color);
+    color: white;
+    height: 15rem;
+}
+.logout-btn{
+    
+    padding: 1rem;
+text-decoration: none;
+color: white;
+}
+.profile-icon, .login-icon, .register-icon{
+display: none;
+}
+
+.image{
+    border-radius: 20px;
+    width: 90%;
+}
+.story p {
+    color: rgba(0, 0, 0, 0.684);
+}
+.values{
+    background-color: rgba(245, 244, 244, 0.721);
+    
+}.values p{
+    color: rgba(0, 0, 0, 0.659);
+    
+}
+.card{
+    border: 0px;
+    border-radius: 20px;
+    height: 17rem;
+
+}
+.icon{
+    color: var(--orange-color); width: 3rem; height: 3rem ; margin: 20px;
+}
+.coaches{
+    background-color: rgba(245, 244, 244, 0.721);
+
+}
+.coach-img {
+  width: 25rem;
+  height: 25rem;       
+  object-fit: cover;   
+  border-radius: 20px;
+}
+.achi{
+    background-color: var(--blue-color);
+    color: white;
+    gap: 5rem;
+}
+.achi h1{
+    display: flex;
+    justify-content: center;
+}
+.achi p{
+    color : rgba(241, 244, 255, 0.877);
+    font-size: 0.9rem;
+    text-align: center;
+}
+/* end aboutUs */
+@media screen and (max-width: 768px){
+    *{
+        font-size: 0.8rem;
+    }
+}
