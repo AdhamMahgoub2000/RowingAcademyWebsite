@@ -8,6 +8,45 @@ const headers = {
         Authorization: auth,
         "Content-Type": "application/json",
         };
+function updateAuthUI() {
+  let user = localStorage.getItem("user") || sessionStorage.getItem("user");
+  user = user ? JSON.parse(user) : null;
+  const loginIcon = document.querySelector(".login-icon");
+  const registerIcon = document.querySelector(".register-icon");
+  const profileDropdown = document.querySelector(".profile-icon");
+  const userNameSpan = document.querySelector(".user-name");
+  
+
+  if (user) {
+    // Hide login/register
+    if (loginIcon) loginIcon.style.display = "none";
+    if (registerIcon) registerIcon.style.display = "none";
+
+    // Show profile dropdown
+    if (profileDropdown) profileDropdown.style.display = "inline-block";
+
+    // Insert user name
+    if (userNameSpan) userNameSpan.textContent = `Hello, ${user.name}`;
+  } else {
+    // Show login/register
+    if (loginIcon) loginIcon.style.display = "inline-block";
+    if (registerIcon) registerIcon.style.display = "inline-block";
+
+    // Hide profile dropdown
+    if (profileDropdown) profileDropdown.style.display = "none";
+
+    // Reset name
+    if (userNameSpan) userNameSpan.textContent = "";
+  }
+
+}
+
+document.addEventListener("DOMContentLoaded", updateAuthUI);
+const logoutBtn = document.querySelector(".logout-btn");
+
+if (logoutBtn) {
+  logoutBtn.addEventListener("click",logout);
+}
 let Errorspan = function(message, span_element,color="red"){
         span_element.textContent = message;
         span_element.style.color =color;
@@ -126,5 +165,5 @@ function logout(redirectUrl = "") {
     sessionStorage.removeItem("user");
     sessionStorage.removeItem("isLoggedIn");
 
-    window.location.href = redirectUrl;
+    window.location.reload();
 }

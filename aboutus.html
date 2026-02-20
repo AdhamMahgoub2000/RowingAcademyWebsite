@@ -9,6 +9,48 @@
     <link rel="stylesheet" href="css/adhamCSS.css" />
   </head>
   <body>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+      <div class="container-fluid">
+        <a class="navbar-brand" href="#">Navbar</a>
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#navbarNavDarkDropdown"
+          aria-controls="navbarNavDarkDropdown"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNavDarkDropdown">
+          <ul class="navbar-nav profile-icon">
+            <li class="nav-item dropdown">
+              <button
+                class="btn btn-dark dropdown-toggle"
+                data-bs-toggle="dropdown"
+                aria-expanded="false"
+              >
+                <i class="fa-solid fa-circle-user" style="color: white"></i>
+                <span class="user-name"></span>
+              </button>
+              <ul class="dropdown-menu dropdown-menu-dark">
+                <li class="">
+                  <a href="" class="logout-btn"
+                    >Logout
+                    <i class="fa fa-sign-out"></i>
+                  </a>
+                </li>
+              </ul>
+            </li>
+          </ul>
+          <a href="login.html" class="btn btn-primary login-icon">login</a>
+          <a href="register.html" class="btn btn-success register-icon"
+            >Sign Up</a
+          >
+        </div>
+      </div>
+    </nav>
     <!-- Landing -->
     <section class="container-fluid landing d-flex align-items-center mr-5">
       <div class="text-left m-5" style="width: 80%">
@@ -17,6 +59,7 @@
           Since 2017, we've been Cairo's premier rowing academy, dedicated to
           developing athletes and fostering a lifelong love of the sport.
         </p>
+        <div class="profile"></div>
       </div>
     </section>
     <!-- Story -->
@@ -185,18 +228,30 @@
       </div>
     </section>
     <!-- Achievements -->
-    <section class="container-fluid achi p-5 ">
+    <section class="container-fluid achi p-5">
       <div class="text-center">
         <h1 class="display-5 fw-medium">Our Achievements</h1>
       </div>
-      <div class="row d-flex justify-content-between align-items-center mt-5 mx-5 achi">
-        <div class="col-lg-2 col-sm-12"><h1 class="">50+</h1><p class="achi">National Championships</p></div>
-        <div class="col-lg-2 col-sm-12"><h1>15</h1><p class="achi">Masters Rowing</p></div>
-        <div class="col-lg-2 col-sm-12"><h1>200+</h1><p class="achi">Recreational Rowers</p></div>
-        <div class="col-lg-2 col-sm-12"><h1>98%</h1><p class="achi">Member Satisfaction</p></div>
-
+      <div
+        class="row d-flex justify-content-between align-items-center mt-5 mx-5 achi"
+      >
+        <div class="col-lg-2 col-sm-12">
+          <h1 class="">50+</h1>
+          <p class="achi">National Championships</p>
+        </div>
+        <div class="col-lg-2 col-sm-12">
+          <h1>15</h1>
+          <p class="achi">Masters Rowing</p>
+        </div>
+        <div class="col-lg-2 col-sm-12">
+          <h1>200+</h1>
+          <p class="achi">Recreational Rowers</p>
+        </div>
+        <div class="col-lg-2 col-sm-12">
+          <h1>98%</h1>
+          <p class="achi">Member Satisfaction</p>
+        </div>
       </div>
-      
     </section>
 
     <script src="js/bootstrap.bundle.min.js"></script>

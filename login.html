@@ -78,32 +78,50 @@
           let rememberMe = document.getElementById("dropdownCheck").checked;
 
           let isEmailValid = checkEmail(emailInput, emailError);
-
           let isPasswordValid = checkPassword(passwordInput, passwordError);
+
           if (!isPasswordValid)
             Errorspan("Password must be At least 8 char", passwordError);
 
-          if (!isEmailValid || !isPasswordValid) {
-            return;
-          }
+          if (!isEmailValid || !isPasswordValid) return;
+
           emailError.hidden = true;
           passwordError.hidden = true;
+
           let user_auth = await checkUserpass(
             emailInput.value,
             passwordInput.value,
           );
+
           if (user_auth === "User is Not Found") {
             Errorspan("User Is Not Found", emailError);
-          } else if (!user_auth) Errorspan("Password Is Wrong", passwordError);
-          else {
+          } else if (!user_auth) {
+            Errorspan("Password Is Wrong", passwordError);
+          } else {
             let userData = await getUserdataEmail(emailInput.value);
             let user = userData[0];
-            Errorspan(`welcome ${user.name}`, passwordError, "green");
+
+            Errorspan(`Welcome ${user.name}`, passwordError, "green");
+
+            const params = new URLSearchParams(window.location.search);
+            const redirectURL = params.get("redirect")
+              ? decodeURIComponent(params.get("redirect"))
+              : "index.html";
+
             if (rememberMe) {
-              saveLoginSuccess(user, "index.html");
+              localStorage.setItem("user", JSON.stringify(user));
+              localStorage.setItem("isLoggedIn", "true");
+
+              setTimeout(() => {
+                window.location.href = redirectURL;
+              }, 2000);
             } else {
               sessionStorage.setItem("user", JSON.stringify(user));
               sessionStorage.setItem("isLoggedIn", "true");
+
+              setTimeout(() => {
+                window.location.href = redirectURL;
+              }, 2000);
             }
           }
         });

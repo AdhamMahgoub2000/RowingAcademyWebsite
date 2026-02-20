@@ -9,12 +9,19 @@
     color: white;
     height: 15rem;
 }
-
+.logout-btn{
+    
+    padding: 1rem;
+text-decoration: none;
+color: white;
+}
+.profile-icon, .login-icon, .register-icon{
+display: none;
+}
 
 .image{
     border-radius: 20px;
     width: 90%;
-    height: fit-content;
 }
 .story p {
     color: rgba(0, 0, 0, 0.684);
