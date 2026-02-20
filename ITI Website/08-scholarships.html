@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ITI Scholarships</title>
+
+  <!-- Bootstrap CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet">
+
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+ <!-- NAVBAR -->
+  <div class="navbar">
+    <a href="index.html" class="logo">
+      <img src="https://iti.gov.eg/assets/images/ColoredLogo.svg" alt="ITI Logo">
+    </a>
+    <div class="nav-links">
+      <a href="01-index.Html">Home</a>
+      <a href="09-tracks.html">ITI Tracks</a>
+      <a href="08-scholarships.html" class="active">Scholarships</a>
+      <a href="03-news.html">News</a>
+      <a href="02-about.html">About</a>
+    </div>
+  </div>
+
+  <!-- SCHOLARSHIPS SECTION -->
+  <section class="section">
+    <div class="container">
+      <div class="row">
+        <div class="card">
+          <img src="https://logos-world.net/wp-content/uploads/2020/09/Microsoft-Logo.png" alt="Scholarship 1">
+          <div class="card-body">
+            <h5 class="card-title">Microsoft Scholarship</h5>
+            <p class="card-text">Provides students with financial support and mentorship opportunities in tech fields.</p>
+          </div>
+        </div>
+        <div class="card">
+          <img src="https://static.vecteezy.com/system/resources/previews/013/948/549/original/google-logo-on-transparent-white-background-free-vector.jpg" alt="Scholarship 2">
+          <div class="card-body">
+            <h5 class="card-title">Google Scholarship</h5>
+            <p class="card-text">Offers students support in computer science and technology education programs.</p>
+          </div>
+        </div>
+        <div class="card">
+          <img src="https://d1.awsstatic.com/t-c-css/information-technology-institute/iti_logo.5b9a0fd125be.d1cabc535c5b16afdedf262c3164c32c212d7267.png" alt="Scholarship 3">
+          <div class="card-body">
+            <h5 class="card-title">ITI Excellence Scholarship</h5>
+            <p class="card-text">Awarded to top-performing students for outstanding achievements in training programs.</p>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+  
+</head>
+<style>
+    /* RESET */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: Arial, sans-serif;
+      background: #f8f8f8;
+      color: #333;
+    }
+
+    /* NAVBAR */
+    .navbar {
+      background-color: green;
+      display: flex;
+      justify-content: space-between; /* logo left, links right */
+      align-items: center;
+      padding: 18px 25px;
+      flex-wrap: wrap;
+    }
+
+    .logo img {
+      height: 55px;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 20px;
+    }
+
+    .nav-links a {
+      color: #fff;
+      text-decoration: none;
+      font-size: 18px;
+      font-weight: 800;
+      padding: 8px 12px;
+    }
+
+    .nav-links a:hover,
+    .nav-links a.active {
+      text-decoration: underline;
+    }
+
+    /* SCHOLARSHIPS SECTION */
+    .section {
+      padding: 60px 20px;
+    }
+
+    .container {
+      max-width: 1200px;
+      margin: auto;
+    }
+
+    .row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 25px;
+    }
+
+    .card {
+      background: #fff;
+      border-radius: 10px;
+      overflow: hidden;
+      box-shadow: 0 4px 15px rgba(0,0,0,0.08);
+      flex: 1 1 calc(33.333% - 20px);
+      display: flex;
+      flex-direction: column;
+      transition: transform 0.3s ease;
+    }
+
+    .card:hover {
+      transform: translateY(-8px);
+    }
+
+    .card img {
+      width: 100%;
+      height: 180px;
+      object-fit: cover;
+    }
+
+    .card-body {
+      padding: 20px;
+      display: flex;
+      flex-direction: column;
+      flex-grow: 1;
+      text-align: center;
+    }
+
+    .card-title {
+      font-size: 20px;
+      margin-bottom: 10px;
+    }
+
+    .card-text {
+      font-size: 14px;
+      margin-bottom: 20px;
+      flex-grow: 1;
+    }
+
+    .btn {
+      display: inline-block;
+      padding: 8px 14px;
+      border: 1px solid #0d6efd;
+      color: #0d6efd;
+      text-decoration: none;
+      border-radius: 5px;
+      font-size: 14px;
+      transition: 0.3s;
+    }
+
+    .btn:hover {
+      background: #0d6efd;
+      color: #fff;
+    }
+
+    /* FOOTER */
+    .footer {
+      background-color: green;
+      color: white;
+      padding: 40px 20px;
+    }
+
+    .footer-container {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      max-width: 1100px;
+      margin: auto;
+      gap: 40px;
+      flex-wrap: wrap;
+    }
+
+    .footer-about, .footer-contact {
+      flex: 1;
+      min-width: 250px;
+    }
+
+    .footer-contact h3 {
+      margin-bottom: 15px;
+    }
+
+    .footer-contact p {
+      margin-bottom: 8px;
+    }
+
+    .social a {
+      color: white;
+      margin-right: 10px;
+      font-size: 18px;
+      text-decoration: none;
+    }
+
+    /* RESPONSIVE */
+    @media (max-width: 992px) {
+      .card {
+        flex: 1 1 calc(50% - 20px);
+      }
+      .navbar {
+        flex-direction: column;
+        gap: 15px;
+        align-items: flex-start;
+      }
+      .footer-container {
+        flex-direction: column;
+        text-align: center;
+      }
+    }
+
+    @media (max-width: 600px) {
+      .card {
+        flex: 1 1 100%;
+      }
+      .navbar {
+        align-items: center;
+      }
+    }
+  </style>
+<body>
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div class="footer-container">
+      <div class="footer-about">
+        <p>
+          Over 30 years, ITI has kept updating its training portfolio through continuous
+          monitoring for future global tech trends and national projects, sustaining graduates' employment to 85% prior to graduation.
+        </p>
+      </div>
+
+      <div class="footer-contact">
+        <h3>KEEP IN TOUCH</h3>
+        <p><i class="fa-solid fa-phone"></i> 17002</p>
+        <p><i class="fa-solid fa-envelope"></i> ITIinfo@iti.gov.eg</p>
+        <div class="social">
+          <a href="#"><i class="fa-brands fa-facebook-f"></i></a>
+          <a href="#"><i class="fa-brands fa-linkedin-in"></i></a>
+          <a href="#"><i class="fa-brands fa-youtube"></i></a>
+          <a href="#"><i class="fa-brands fa-x-twitter"></i></a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
+

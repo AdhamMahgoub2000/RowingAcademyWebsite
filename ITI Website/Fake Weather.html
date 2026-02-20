@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Weather App</title>
+</head>
+<body>
+
+<h2>Enter Your City</h2>
+<input type="text" id="cityInput" />
+<button id="submitBtn">Submit</button>
+
+<p id="result"></p>
+
+<script>
+const button = document.getElementById("submitBtn");
+const input = document.getElementById("cityInput");
+const result = document.getElementById("result");
+
+// Delay function
+function delay(ms) {
+  return new Promise(resolve => setTimeout(resolve, ms));
+}
+
+async function getWeather(city) {
+  await delay(2000);
+
+  if (city === "paris") {
+    return "The weather in Paris is sunny";
+  } else {
+    throw new Error("Weather data for " + city + " is not available.");
+  }
+}
+
+// Button click event
+button.addEventListener("click", async () => {
+  const city = input.value.trim();
+  result.textContent = "Loading...";
+
+  try {
+    const weather = await getWeather(city);
+    result.textContent = weather;
+  } catch (error) {
+    result.textContent = error.message;
+  }
+});
+</script>
+
+</body>
+</html>

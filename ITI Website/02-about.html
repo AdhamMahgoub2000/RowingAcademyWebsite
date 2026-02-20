@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>About ITI</title>
+
+  <!-- Bootstrap CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet">
+
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+  <style>
+    /* RESET */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: Arial, sans-serif;
+      background: #f8f8f8;
+      color: #333;
+    }
+
+    /* NAVBAR */
+    .navbar {
+      background-color: green;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 18px 25px;
+      flex-wrap: wrap;
+    }
+
+    .logo img {
+      height: 55px;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 20px;
+    }
+
+    .nav-links a {
+      color: #fff;
+      text-decoration: none;
+      font-size: 18px;
+      font-weight: 800;
+      padding: 8px 12px;
+    }
+
+    .nav-links a:hover,
+    .nav-links a.active {
+      text-decoration: underline;
+    }
+
+    /* SECTION */
+    .section {
+      padding: 60px 20px;
+    }
+
+    .container {
+      max-width: 1200px;
+      margin: auto;
+    }
+
+    .title {
+      text-align: center;
+      margin-bottom: 40px;
+      color: #3CCA3C;
+      font-weight: bold;
+    }
+
+    /* INFO BLOCK */
+    .info-block {
+      background: #fff;
+      padding: 30px;
+      border-radius: 10px;
+      box-shadow: 0 4px 15px rgba(0,0,0,0.08);
+      margin-bottom: 50px;
+      line-height: 1.7;
+    }
+
+    /* CARDS */
+    .row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 25px;
+    }
+
+    .card {
+      background: #fff;
+      border-radius: 10px;
+      box-shadow: 0 4px 15px rgba(0,0,0,0.08);
+      flex: 1 1 calc(33.333% - 20px);
+      padding: 25px;
+      text-align: center;
+      transition: transform 0.3s ease;
+    }
+
+    .card:hover {
+      transform: translateY(-8px);
+    }
+
+    .card h5 {
+      color: #3CCA3C;
+      margin-bottom: 15px;
+    }
+
+    .card p {
+      font-size: 14px;
+    }
+
+    /* FOOTER */
+    .footer {
+      background-color: green;
+      color: white;
+      padding: 40px 20px;
+    }
+
+    .footer-container {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      max-width: 1100px;
+      margin: auto;
+      gap: 40px;
+      flex-wrap: wrap;
+    }
+
+    .footer-about, .footer-contact {
+      flex: 1;
+      min-width: 250px;
+    }
+
+    .footer-contact h3 {
+      margin-bottom: 15px;
+    }
+
+    .footer-contact p {
+      margin-bottom: 8px;
+    }
+
+    .social a {
+      color: white;
+      margin-right: 10px;
+      font-size: 18px;
+      text-decoration: none;
+    }
+
+    /* RESPONSIVE */
+    @media (max-width: 992px) {
+      .card {
+        flex: 1 1 calc(50% - 20px);
+      }
+      .navbar {
+        flex-direction: column;
+        gap: 15px;
+        align-items: flex-start;
+      }
+      .footer-container {
+        flex-direction: column;
+        text-align: center;
+      }
+    }
+
+    @media (max-width: 600px) {
+      .card {
+        flex: 1 1 100%;
+      }
+      .navbar {
+        align-items: center;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- NAVBAR -->
+  <div class="navbar">
+    <a href="01-index.html" class="logo">
+      <img src="https://iti.gov.eg/assets/images/ColoredLogo.svg" alt="ITI Logo">
+    </a>
+    <div class="nav-links">
+      <a href="01-index.html">Home</a>
+      <a href="09-tracks.html">ITI Tracks</a>
+      <a href="08-scholarships.html">Scholarships</a>
+      <a href="03-news.html">News</a>
+      <a href="02-about.html" class="active">About</a>
+    </div>
+  </div>
+
+  <!-- ABOUT SECTION -->
+  <section class="section">
+    <div class="container">
+
+      <h2 class="title">About ITI</h2>
+
+      <div class="info-block">
+        <p>
+          The Information Technology Institute (ITI) is a leading Egyptian governmental institute established in 1993 under the Ministry of Communications and Information Technology, dedicated to developing highly skilled ICT professionals capable of competing in both local and global markets. For more than 30 years, ITI has played a vital role in supporting Egypt’s digital transformation by offering advanced training programs that combine academic knowledge with practical, hands-on experience. The institute continuously updates its curriculum to align with emerging technologies such as Artificial Intelligence, Data Science, Cybersecurity, Software Development, and UI/UX Design, ensuring that graduates are fully prepared to meet industry demands. Through strong partnerships with leading technology companies and national projects, ITI maintains a high employment rate among its graduates, empowering youth with the technical expertise, professional skills, and confidence needed to succeed in today’s fast-evolving digital world.
+        </p>
+      </div>
+
+      
+      <div class="row">
+
+        <div class="card">
+          <i class="fa-solid fa-bullseye fa-2x mb-3" style="color:#3CCA3C;"></i>
+          <h5>Professional Training Programs (PTP)</h5>
+          <p>ITI offers a Professional Training Program (PTP) that spans nine months and provides intensive, scholarship-based education for fresh graduates seeking to build strong technical careers.</p>
+        </div>
+
+        <div class="card">
+          <i class="fa-solid fa-eye fa-2x mb-3" style="color:#3CCA3C;"></i>
+          <h5>Intensive Training Programs</h5>
+          <p>In addition to long-term programs, ITI provides short and intensive courses designed to equip learners with practical skills in high-demand technology fields within a shorter timeframe.</p>
+        </div>
+
+        <div class="card">
+          <i class="fa-solid fa-handshake fa-2x mb-3" style="color:#3CCA3C;"></i>
+          <h5>Collabration with Minsitry of Communications and Information Technology (MCIT)</h5>
+          <p>MCIT is the government authority responsible for Egypt’s ICT strategy, telecom policy, and digital transformation.
+            🎓 Information Technology Institute (ITI – Egypt) is under MCIT Supervision , It operates under MCIT and implements the ministry’s digital skills and workforce development strategy, it works under MCIT’s supervision and guidance to train top talent in the field of information technology to be ready to compete in the Global& Local Market.</p>
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div class="footer-container">
+
+      <div class="footer-about">
+        <p>
+          Over 30 years, ITI has kept updating its training portfolio through continuous
+          monitoring for future global tech trends and national projects,
+          sustaining graduates' employment to 85% prior to graduation.
+        </p>
+      </div>
+
+      <div class="footer-contact">
+        <h3>KEEP IN TOUCH</h3>
+        <p><i class="fa-solid fa-phone"></i> 17002</p>
+        <p><i class="fa-solid fa-envelope"></i> ITIinfo@iti.gov.eg</p>
+
+        <div class="social">
+          <a href="#"><i class="fa-brands fa-facebook-f"></i></a>
+          <a href="#"><i class="fa-brands fa-linkedin-in"></i></a>
+          <a href="#"><i class="fa-brands fa-youtube"></i></a>
+          <a href="#"><i class="fa-brands fa-x-twitter"></i></a>
+        </div>
+      </div>
+
+    </div>
+  </footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
+
+</body>
+</html>

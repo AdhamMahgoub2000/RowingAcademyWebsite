@@ -1,0 +1,284 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ITI Branches</title>
+
+  <!-- Bootstrap CSS -->
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/css/bootstrap.min.css" rel="stylesheet">
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <!-- Custom CSS -->
+  <link rel="stylesheet" href="styles.css">
+
+  <style>
+    /* BODY & PAGE SETUP */
+    body {
+      display: flex;
+      flex-direction: column;
+      min-height: 100vh;
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background-color: #f8f8f8;
+    }
+
+  .navbar {
+  background-color: green;
+  display: flex;                 /* enables flex layout */
+  justify-content: space-between; /* pushes first item left, last item right */
+  align-items: center;           /* vertically center logo & links */
+  padding: 18px 25px;
+}
+
+.nav-links a {
+  color: #fff;
+  text-decoration: none;
+  padding: 12px 18px;
+  font-size: 18px;
+  font-weight: 800;
+}
+
+.nav-links a:hover {
+  text-decoration: underline;
+}
+
+.logo img {
+  height: 55px;
+}
+
+
+    /* HERO / INTRO */
+    .intro-section {
+      text-align: center;
+      padding: 40px 20px;
+      background: #fff;
+    }
+
+    .intro-section p {
+      font-size: 18px;
+      max-width: 800px;
+      margin: auto;
+    }
+
+    .intro-section mark {
+      background-color: #3CCA3C;
+      color: white;
+      padding: 0 5px;
+    }
+
+    /* BRANCH CARDS */
+    .branches {
+      padding: 40px 20px;
+      max-width: 1200px;
+      margin: auto;
+    }
+
+    .branch-card {
+      background-color: #fff;
+      border-radius: 12px;
+      box-shadow: 0 5px 15px rgba(0,0,0,0.08);
+      transition: transform 0.3s ease;
+      text-align: center;
+      padding: 20px;
+      margin-bottom: 30px;
+    }
+
+    .branch-card:hover {
+      transform: translateY(-8px);
+    }
+
+    .branch-card h5 {
+      font-size: 20px;
+      margin-bottom: 10px;
+    }
+
+    .branch-card .branch-info {
+      margin: 6px 0;
+      font-size: 15px;
+      color: #333;
+    }
+
+    .branch-card .branch-info i {
+      color: green;
+      margin-right: 8px;
+    }
+
+    /* FOOTER */
+    .footer {
+      background-color: green;
+      color: white;
+      padding: 40px 20px;
+    }
+
+    .footer-container {
+      display: flex;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      max-width: 1100px;
+      margin: auto;
+      gap: 40px;
+    }
+
+    .footer-about,
+    .footer-contact {
+      flex: 1;
+      min-width: 250px;
+    }
+
+    .footer-contact h3 {
+      margin-bottom: 15px;
+    }
+
+    .footer-contact p {
+      margin-bottom: 8px;
+    }
+
+    .social a {
+      color: white;
+      margin-right: 10px;
+      font-size: 18px;
+      text-decoration: none;
+    }
+
+    /* RESPONSIVE */
+    @media (max-width: 992px) {
+      .branch-card {
+        margin-bottom: 20px;
+      }
+      .footer-container {
+        flex-direction: column;
+        text-align: center;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- NAVBAR -->
+  <nav class="navbar">
+    <a href="01-index.html" class="logo">
+      <img src="https://iti.gov.eg/assets/images/ColoredLogo.svg" alt="ITI Logo">
+    </a>
+    <div class="nav-links">
+      <a href="01-index.html">Home</a>
+      <a href="09-tracks.html">ITI Tracks</a>
+      <a href="08-scholarships.html">Scholarships</a>
+      <a href="03-news.html">News</a>
+      <a href="02-about.html">About</a>
+    </div>
+  </nav>
+
+  <!-- INTRO SECTION -->
+  <section class="intro-section">
+    <h1>ITI Branches</h1>
+    <p>
+      <i class="fa-solid fa-info-circle" style="color: #3CCA3C; margin-right: 10px;"></i>
+      ITI has strategic locations across Egypt to provide accessible quality training to students nationwide. 
+      Visit any of our branches to learn more about enrollment, programs, and our facilities.
+    </p>
+  </section>
+
+  <!-- BRANCH CARDS -->
+  <section class="branches">
+    <div class="row">
+      <!-- Cairo -->
+      <div class="col-12 col-md-6 col-lg-4">
+        <div class="branch-card">
+          <h5><i class="fa-solid fa-location-dot"></i> Cairo Branch</h5>
+          <div class="branch-info"><i class="fa-solid fa-map-marker-alt"></i>30 Nasr City, Cairo, Egypt</div>
+          <div class="branch-info"><i class="fa-solid fa-phone"></i>+20 2 2401 4517</div>
+          <div class="branch-info"><i class="fa-solid fa-envelope"></i>cairo@iti.gov.eg</div>
+          <div class="branch-info"><i class="fa-solid fa-clock"></i>8:00 AM - 5:00 PM</div>
+        </div>
+      </div>
+
+      <!-- Alexandria -->
+      <div class="col-12 col-md-6 col-lg-4">
+        <div class="branch-card">
+          <h5><i class="fa-solid fa-location-dot"></i> Alexandria Branch</h5>
+          <div class="branch-info"><i class="fa-solid fa-map-marker-alt"></i>Smouha, Alexandria, Egypt</div>
+          <div class="branch-info"><i class="fa-solid fa-phone"></i>+20 3 5860 123</div>
+          <div class="branch-info"><i class="fa-solid fa-envelope"></i>alexandria@iti.gov.eg</div>
+          <div class="branch-info"><i class="fa-solid fa-clock"></i>8:00 AM - 5:00 PM</div>
+        </div>
+      </div>
+
+      <!-- Giza -->
+      <div class="col-12 col-md-6 col-lg-4">
+        <div class="branch-card">
+          <h5><i class="fa-solid fa-location-dot"></i> Giza Branch</h5>
+          <div class="branch-info"><i class="fa-solid fa-map-marker-alt"></i>6th of October City, Giza, Egypt</div>
+          <div class="branch-info"><i class="fa-solid fa-phone"></i>+20 2 3859 4562</div>
+          <div class="branch-info"><i class="fa-solid fa-envelope"></i>giza@iti.gov.eg</div>
+          <div class="branch-info"><i class="fa-solid fa-clock"></i>8:00 AM - 5:00 PM</div>
+        </div>
+      </div>
+
+      <!-- Aswan -->
+      <div class="col-12 col-md-6 col-lg-4">
+        <div class="branch-card">
+          <h5><i class="fa-solid fa-location-dot"></i> Aswan Branch</h5>
+          <div class="branch-info"><i class="fa-solid fa-map-marker-alt"></i>Aswan City, Upper Egypt</div>
+          <div class="branch-info"><i class="fa-solid fa-phone"></i>+20 97 2309 870</div>
+          <div class="branch-info"><i class="fa-solid fa-envelope"></i>aswan@iti.gov.eg</div>
+          <div class="branch-info"><i class="fa-solid fa-clock"></i>8:00 AM - 5:00 PM</div>
+        </div>
+      </div>
+
+      <!-- Mansoura -->
+      <div class="col-12 col-md-6 col-lg-4">
+        <div class="branch-card">
+          <h5><i class="fa-solid fa-location-dot"></i> Mansoura Branch</h5>
+          <div class="branch-info"><i class="fa-solid fa-map-marker-alt"></i>Mansoura, Delta Region</div>
+          <div class="branch-info"><i class="fa-solid fa-phone"></i>+20 50 2345 678</div>
+          <div class="branch-info"><i class="fa-solid fa-envelope"></i>mansoura@iti.gov.eg</div>
+          <div class="branch-info"><i class="fa-solid fa-clock"></i>8:00 AM - 5:00 PM</div>
+        </div>
+      </div>
+
+      <!-- Suez -->
+      <div class="col-12 col-md-6 col-lg-4">
+        <div class="branch-card">
+          <h5><i class="fa-solid fa-location-dot"></i> Suez Branch</h5>
+          <div class="branch-info"><i class="fa-solid fa-map-marker-alt"></i>Suez City, Suez Canal Region</div>
+          <div class="branch-info"><i class="fa-solid fa-phone"></i>+20 62 3342 109</div>
+          <div class="branch-info"><i class="fa-solid fa-envelope"></i>suez@iti.gov.eg</div>
+          <div class="branch-info"><i class="fa-solid fa-clock"></i>8:00 AM - 5:00 PM</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div class="footer-container">
+      <div class="footer-about">
+        <p>
+          Over 30 years, ITI has kept updating its training portfolio through continuous
+          monitoring for the future global tech trends, as well as the country's national
+          and mega projects, hence, sustaining its graduates' employment percentage
+          to 85 prior their graduation.
+        </p>
+      </div>
+
+      <div class="footer-contact">
+        <h3>KEEP IN TOUCH</h3>
+        <p><i class="fa-solid fa-phone"></i> 17002</p>
+        <p>&#9993; ITIinfo@iti.gov.eg</p>
+
+        <div class="social">
+          <a href="#"><i class="fa-brands fa-facebook-f"></i></a>
+          <a href="#"><i class="fa-brands fa-linkedin-in"></i></a>
+          <a href="#"><i class="fa-brands fa-youtube"></i></a>
+          <a href="#"><i class="fa-brands fa-x-twitter"></i></a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Bootstrap JS -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Library Management System</title>
+    <style>
+        body {
+            font-family: Arial;
+            background: #f4f4f4;
+           /*Center Everything*/
+            text-align: center;
+        }
+
+        .container {
+            background: white;
+            width: 400px;
+            margin: 50px auto;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px gray;
+        }
+
+        input {
+            width: 90%;
+            padding: 8px;
+            margin: 5px;
+        }
+
+        button {
+            padding: 8px 15px;
+            margin: 5px;
+            cursor: pointer;
+        }
+/*Dashboard is hidden at first (until login is successful).*/
+     #dashboard {
+            display: none;
+        }
+
+        #report {
+            text-align: left;
+            margin-top: 15px;
+            white-space: pre-line;
+        }
+    </style>
+</head>
+<body>
+
+<!-- Login Page -->
+<div class="container" id="loginPage">
+    <h2>Library Management System Login</h2>
+    <input type="text" id="username" placeholder="Username"><br>
+    <input type="password" id="password" placeholder="Password"><br>
+    <button onclick="login()">Login</button>
+    <p id="loginMessage"></p>
+</div>
+
+<!-- Dashboard -->
+<div class="container" id="dashboard">
+    <h2>Library Management System Dashboard</h2>
+
+    <input type="text" id="title" placeholder="Book Title">
+    <input type="text" id="author" placeholder="Author">
+    <input type="number" id="copies" placeholder="Copies">
+
+    <br>
+    <button onclick="addBook()">Add Book</button>
+    <button onclick="borrowBook()">Borrow</button>
+    <button onclick="returnBook()">Return</button>
+    <button onclick="showReport()">Show Report</button>
+
+    <div id="report"></div>
+</div>
+
+<script>
+let library = [];
+
+// Login Function
+function login() {
+    const user = document.getElementById("username").value;
+    const pass = document.getElementById("password").value;
+
+    if (user === "admin" && pass === "1234") {
+        document.getElementById("loginPage").style.display = "none";
+        document.getElementById("dashboard").style.display = "block";
+    } else {
+        document.getElementById("loginMessage").innerText = "Invalid Credentials!";
+    }
+}
+
+// Add Book
+function addBook() {
+    let title = document.getElementById("title").value.trim();
+    let author = document.getElementById("author").value.trim();
+    let copies = Number(document.getElementById("copies").value);
+
+    if (!title || copies <= 0 || isNaN(copies)) {
+        alert("Enter valid title and copies!");
+        return;
+    }
+
+    let existingBook = library.find(book =>
+        book.title.toLowerCase() === title.toLowerCase()
+    );
+
+    if (existingBook) {
+        existingBook.availableCopies += copies;
+        alert("Copies Updated!");
+    } else {
+        library.push({
+            title,
+            author,
+            availableCopies: copies,
+            borrowedCopies: 0,
+            borrowCount: 0
+        });
+        alert("Book Added!");
+    }
+}
+
+// Borrow Book
+function borrowBook() {
+    let title = document.getElementById("title").value.trim();
+
+    let book = library.find(book =>
+        book.title.toLowerCase() === title.toLowerCase()
+    );
+
+    if (!book) {
+        alert("Book Not Found!");
+        return;
+    }
+
+    if (book.availableCopies <= 0) {
+        alert("Out of Stock!");
+        return;
+    }
+
+    book.availableCopies--;
+    book.borrowedCopies++;
+    book.borrowCount++;
+
+    alert("Book Borrowed!");
+}
+
+// Return Book
+function returnBook() {
+    let title = document.getElementById("title").value.trim();
+
+    let book = library.find(book =>
+        book.title.toLowerCase() === title.toLowerCase()
+    );
+
+    if (!book) {
+        alert("Book Not Found!");
+        return;
+    }
+
+    if (book.borrowedCopies > 0) {
+        book.borrowedCopies--;
+        book.availableCopies++;
+        alert("Book Returned!");
+    } else {
+        alert("No borrowed copies!");
+    }
+}
+
+// Show Report
+function showReport() {
+    if (library.length === 0) {
+        document.getElementById("report").innerText = "Library is empty!";
+        return;
+    }
+
+    let report = "===== Library Report =====\n\n";
+
+    for (let book of library) {
+        let status =
+            book.availableCopies > 2 ? "Available" :
+            book.availableCopies >= 1 ? "Limited" :
+            "Out of Stock";
+
+        report +=
+            "Title: " + book.title + "\n" +
+            "Author: " + book.author + "\n" +
+            "Available: " + book.availableCopies + "\n" +
+            "Borrowed: " + book.borrowedCopies + "\n" +
+            "Borrow Count: " + book.borrowCount + "\n" +
+            "Status: " + status + "\n" +
+            "-----------------------\n";
+    }
+
+    document.getElementById("report").innerText = report;
+}
+</script>
+
+</body>
+</html>
