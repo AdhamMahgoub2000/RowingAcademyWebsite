@@ -1,11 +1,164 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Home Page</title>
+<!DOCUTYPE HTML>
+<HTML lang="en"
+<head><meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">  
+<title>Rowing Academy</title>>
+<style>
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', sans-serif;
+}
+
+body {
+    height: 200vh; /* Scrollable Page */
+}
+
+/* NAVBAR */
+nav {
+    position: fixed;
+    width: 100%;
+    padding: 20px 8%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    transition: 0.3s ease;
+    z-index: 1000;
+}
+/* LOGO */
+.logo {
+    color: white;
+    font-size: 22px;
+    font-weight: bold;
+    letter-spacing: 1px;
+}
+
+/* NAV LINKS */
+.nav-links {
+    display: flex;
+    list-style: none;
+    gap: 30px;
+}
+
+.nav-links a {
+    text-decoration: none;
+    color: white;
+    font-weight: 500;
+    position: relative;
+    transition: 0.3s;
+}
+
+.nav-links a::after {
+    content: '';
+    width: 0%;
+    height: 2px;
+    background: #f4c430;
+    position: absolute;
+    left: 0;
+    bottom: -5px;
+    transition: 0.3s;
+}
+
+.nav-links a:hover::after {
+    width: 100%;
+}
+
+/* CTA BUTTON */
+.join-btn {
+    padding: 8px 18px;
+    background: #f4c430;
+    color: #0d1b2a !important;
+    border-radius: 25px;
+    font-weight: 600;
+    transition: 0.3s;
+}
+
+.join-btn:hover {
+    background: white;
+}
+
+/* HAMBURGER ICON */
+.hamburger {
+    display: none;
+    flex-direction: column;
+    cursor: pointer;
+    gap: 5px;
+}
+
+.hamburger div {
+    width: 25px;
+    height: 3px;
+    background: white;
+    transition: 0.3s;
+}
+
+/* MOBILE Responsive */
+@media (max-width: 900px) {
+    .nav-links {
+        position: absolute;
+        right: -100%;
+        top: 80px;
+        flex-direction: column;
+        background: #0d1b2a;
+        width: 220px;
+        padding: 30px;
+        transition: 0.4s;
+        border-radius: 10px 0 0 10px;
+    }
+
+    .nav-links.active {
+        right: 0;
+    }
+
+    .hamburger {
+        display: flex;
+    }
+}
+</style>
 </head>
+
+
 <body>
-    
+
+<nav id="navbar">
+    <div class="logo">🚣 Rowing Academy</div>
+    <ul class="nav-links" id="navLinks">
+        <li><a href="01-home.html">Home</a></li>
+        <li><a href="02-about.html">About</a></li>
+        <li><a href="03-programs.html">Programs</a></li>
+        <li><a href="04-coaches.html">Coaches</a></li>
+        <li><a href="05-schedule.html">Schedule</a></li>
+        <li><a href="06-events.html">Events</a></li>
+        <li><a href="07-contact.html">Contact</a></li>
+        <li><a href="#" class="join-btn">Join Now</a></li>
+    </ul>
+
+    <div class="hamburger" id="hamburger">
+        <div></div>
+        <div></div>
+        <div></div>
+    </div>
+</nav>
+
+<script>
+// Navbar background on scroll
+window.addEventListener("scroll", function() {
+    const navbar = document.getElementById("navbar");
+    navbar.classList.toggle("scrolled", window.scrollY > 50);
+});
+
+// Mobile menu toggle
+const hamburger = document.getElementById("hamburger");
+const navLinks = document.getElementById("navLinks");
+
+hamburger.addEventListener("click", () => {
+    navLinks.classList.toggle("active");
+});
+</script>
+
 </body>
 </html>
+
+
+
