@@ -24,10 +24,12 @@
   content: "";
   position: absolute;
   inset: 0;
-  background: url("images/cover3.jpeg") center/cover no-repeat;
-  filter: blur(1px);
-  opacity: 0.6; 
+  background: 
+    linear-gradient(rgba(1, 1, 1, 0.664), rgba(0, 0, 0, 0.149)),
+    url("images/cover3.jpeg") center/cover no-repeat; 
+  filter: blur(1px); 
   z-index: -1;
+  /* opacity: 0.6;  */
 }
     </style>
   </head>
@@ -128,7 +130,7 @@
     <section
       class="container-fluid landing d-flex align-items-center mr-5 about-us"
     >
-      <div class="text-left m-5">
+      <div class="text-left m-5 " >
         <h1 class="display-5 fw-medium">About US</h1>
         <p style="width: 70%; font-size: 1rem">
           Since 2017, we've been Cairo's premier rowing academy, dedicated to
