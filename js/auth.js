@@ -15,7 +15,8 @@ function updateAuthUI() {
   const registerIcon = document.querySelector(".register-icon");
   const profileDropdown = document.querySelector(".profile-icon");
   const userNameSpan = document.querySelector(".user-name");
-  
+  let currentPage = window.location.pathname.split("/").pop() || "01-home.html";
+  const profileLink = document.getElementById("profileLink"); 
 
   if (user) {
     if (loginIcon) loginIcon.style.display = "none";
@@ -24,9 +25,25 @@ function updateAuthUI() {
     if (profileDropdown) profileDropdown.style.display = "inline-block";
 
     if (userNameSpan) userNameSpan.textContent = `Hello, ${user.name}`;
+        if (profileLink) {
+        if (user.email_address === "admin@rowin.com") {
+            profileLink.href = "dashboard.html";
+            profileLink.textContent = "Dashboard"; 
+        } else {
+           
+            profileLink.href = "profile.html";
+            profileLink.textContent = "View Profile";
+        }
+    }
   } else {
-    if (loginIcon) loginIcon.style.display = "inline-block";
-    if (registerIcon) registerIcon.style.display = "inline-block";
+    if (loginIcon) {
+        loginIcon.style.display = "inline-block";
+        loginIcon.href = `login.html?redirect=${currentPage}`; 
+    }
+    if (registerIcon) {
+        registerIcon.style.display = "inline-block";
+        registerIcon.href = `register.html?redirect=${currentPage}`; 
+    }
 
     if (profileDropdown) profileDropdown.style.display = "none";
 
@@ -86,18 +103,16 @@ let getUserdataNumber = async function (number) {
         return client_data;
         };
 let checkUserpass = async function (email_entered, password_entered) {
-        let email_checked = await getUserdataEmail(email_entered);
-        if (email_checked.length === 0) {
-        return "User is Not Found";
-        }
-        if (email_checked[0].password === password_entered) {
-          if(email_entered === "admin@rowin.com"){
-            window.location.href = "dashboard.html"
-          }
-        return true;
-        }
-        return false;
-    };
+  let email_checked = await getUserdataEmail(email_entered);
+  if (email_checked.length === 0) {
+    return "User is Not Found";
+  }
+  
+  if (email_checked[0].password === password_entered) {
+    return true;
+  }
+  return false;
+};
 
 let addUser = async function(email,number,name, password){
     let emailError = document.getElementById("email_error_register");
@@ -135,12 +150,17 @@ let addUser = async function(email,number,name, password){
       Errorspan("Registration failed", passwordError);
     }
 }
-function saveLoginSuccess(userObject, redirectUrl = "01-home.html") {
+function saveLoginSuccess(userObject, defaultRedirectUrl = "01-home.html") {
     localStorage.setItem("user", JSON.stringify(userObject));
     localStorage.setItem("isLoggedIn", "true");
 
+    const urlParams = new URLSearchParams(window.location.search);
+    const redirectTarget = urlParams.get("redirect");
+
+    const finalUrl = redirectTarget ? redirectTarget : defaultRedirectUrl;
+
     setTimeout(() => {
-        window.location.href = redirectUrl;
+        window.location.href = finalUrl;
     }, 2000);
 }
 function updateNavbar() {
@@ -162,6 +182,6 @@ function logout() {
     sessionStorage.removeItem("user");
     sessionStorage.removeItem("isLoggedIn");
 
-    window.location.reload();
+    window.location.reload("true");
 }
 let user = localStorage.getItem("user")

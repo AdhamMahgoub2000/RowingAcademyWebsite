@@ -1,4 +1,25 @@
-c
+const bookings_api_url = api_url + "Bookings";
+
+document.addEventListener("DOMContentLoaded", function () {
+    let isLoggedIn = localStorage.getItem("isLoggedIn") || sessionStorage.getItem("isLoggedIn");
+    let userData = localStorage.getItem("user") || sessionStorage.getItem("user");
+    let user = userData ? JSON.parse(userData) : null;
+
+    
+    if (!isLoggedIn || !user) {
+        window.location.href = "login.html";
+        return; 
+    }
+
+    if (user.email_address !== "admin@rowin.com") {
+        alert("Access Denied: Admin privileges required.");
+        window.location.href = "01-home.html";
+        return; 
+    }
+
+    console.log("Admin verified. Loading dashboard...");
+    loadBookings(); 
+});
 
 function createBookingRow(index, booking) {
   const tr = document.createElement("tr");
@@ -27,13 +48,13 @@ async function loadBookings() {
     document.getElementById("upcomingSessions").textContent = upcoming.length;
 
     const tbody = document.querySelector("#bookingTable tbody");
-    tbody.innerHTML = "";
-    bookings.forEach((booking, index) => {
-      tbody.appendChild(createBookingRow(index, booking));
-    });
+    if(tbody){
+        tbody.innerHTML = "";
+        bookings.forEach((booking, index) => {
+          tbody.appendChild(createBookingRow(index, booking));
+        });
+    }
   } catch (err) {
     console.error("Error loading bookings:", err);
   }
 }
-
-document.addEventListener("DOMContentLoaded", loadBookings);

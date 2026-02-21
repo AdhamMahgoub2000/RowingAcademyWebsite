@@ -66,7 +66,7 @@
               style="border-left: 2px solid rgba(0, 0, 0, 0.179)"
             >
               <a
-                class="nav-link dropdown-toggle"
+                class="nav-link dropdown-toggle active"
                 href="#"
                 role="button"
                 data-bs-toggle="dropdown"
@@ -80,12 +80,15 @@
               </a>
               <ul class="dropdown-menu">
                 <li class="dropdown-item">
-                  <a href="" class="logout-btn" style="color: black"
+                  <a
+                    id="profileLink"
+                    href=""
+                    style="color: black; text-decoration: none"
                     >View Profile
                   </a>
                 </li>
                 <li class="dropdown-item">
-                  <a href="" class="logout-btn" style="color: black"
+                  <a href="#" class="logout-btn" style="color: black"
                     >Logout
                     <i class="fa fa-sign-out" style="color: black"></i>
                   </a>
@@ -110,7 +113,7 @@
         </div>
       </div>
     </nav>
-<section class="container my-5">
+    <section class="container my-5">
       <div class="row">
         <div class="col-2">
           <i
@@ -239,9 +242,7 @@
         © 2026 Rowin Academy. All rights reserved.
       </div>
     </footer>
-    <script>
-
-    </script>
+    <script></script>
     <script src="js/bootstrap.bundle.min.js"></script>
     <script src="js/all.min.js"></script>
     <script src="js/auth.js"></script>
