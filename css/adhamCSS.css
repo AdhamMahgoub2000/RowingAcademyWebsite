@@ -3,13 +3,18 @@
     --blue-color :rgb(34, 56, 145);
     --orange-color : rgb(248, 158, 69);
 }
-
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
 
 .nav-link:hover{
     color: var(--light-color);
 }
 .nav-item .nav-link.active{
-    color: var(--light-color);}
+    color: var(--light-color) !important;}
 /* start aboutUs */
 .landing{
     background-color: var(--blue-color);

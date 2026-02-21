@@ -4,14 +4,15 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Rowin Academy</title>
-
-    <!-- CSS Files -->
+      <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>About Us</title>
     <link rel="stylesheet" href="css/all.min.css" />
-    <link rel="stylesheet" href="css/karimCSS.css" />  
-
-    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="css/adhamCSS.css" />
     <link rel="stylesheet" href="css/bootstrap.min.css" />
-</head>
+
+    <link rel="stylesheet" href="css/karimCSS.css" />
+ 
 
   <!-- Font Awesome -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
@@ -24,62 +25,99 @@
 <body>
 
 <!-- ================= NAVBAR ================= -->
-<nav>
- <nav class="navbar">
-    <div class="logo">
-        <img src="images/logo.png" alt="Logo">
-    </div>
+<nav class="navbar navbar-expand-lg sticky-top" style="background-color: white">
+        <div class="container">
+          <a class="navbar-brand" href="#"
+            ><img
+              src="images/recolored-logo.png"
+              style="width: 10rem; color: black"
+              alt="Rowin Academy Logo"
+          /></a>
+          <button
+            class="navbar-toggler"
+            type="button"
+            data-bs-toggle="collapse"
+            data-bs-target="#navbarNavDropdown"
+            aria-controls="navbarNavDropdown"
+            aria-expanded="false"
+            aria-label="Toggle navigation"
+          >
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div
+            class="collapse navbar-collapse justify-content-end"
+            id="navbarNavDropdown"
+          >
+            <ul class="navbar-nav gap-4" style="font-size: 1.05rem;">
+              <li class="nav-item">
+                <a class="nav-link active" href="01-home.html">Home</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="02-services.html">Services</a>
+              </li>
+              <li class="nav-item">
+                <a
+                  class="nav-link "
+                  aria-current="page"
+                  href="03-events.html"
+                  >Events</a
+                >
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="04-bookings.html">Bookings</a>
+              </li>
+                            <li class="nav-item">
+                <a class="nav-link" href="05-contact.html">Contact Us</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="06-about.html">About Us</a>
+              </li>
+              <li
+                class="nav-item dropdown profile-icon"
+                style=" border-left: 2px solid rgba(0, 0, 0, 0.179)"
+              >
+                <a
+                  class="nav-link dropdown-toggle"
+                  href="#"
+                  role="button"
+                  data-bs-toggle="dropdown"
+                  aria-expanded="false"
+                >
+                  <i
+                    class="fa-solid fa-circle-user"
+                    style="color: var(--light-color)"
+                  ></i>
+                  <span class="user-name"></span>
+                </a>
+                <ul class="dropdown-menu">
+                  <li class="dropdown-item">
+                    <a href="" class="logout-btn" style="color: black"
+                      >Logout
+                      <i class="fa fa-sign-out" style="color: black"></i>
+                    </a>
+                  </li>
+                </ul>
+              </li>
+              <li class="nav-item">
+                <a
+                  href="login.html"
+                  class="join-btn login-icon"
+                  style="background-color: var(--blue-color)"
+                  >LOGIN</a
+                >
+                <a
+                  href="register.html"
+                  class="join-btn register-icon"
+                  style="background-color: var(--orange-color)"
+                  >Join Now</a
+                >
+              </li>
+            </ul>
+          </div>
+        </div>
+      </nav>
 
-    <ul class="nav-links">
-        <li><a href="#">Home</a></li>
-        <li><a href="08-services.html">Services</a></li>
-        <li><a href="07-events.html">Events</a></li>
-        <li><a href="07-about.html">About</a></li>
-        <li><a href="06-contact.html">Contact</a></li>
-        <li><a href="login.html" class="join-btn">Login</a></li>
-    </ul>
-</nav>
 
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>About Us</title>
-    <link rel="stylesheet" href="css/all.min.css" />
-    <link rel="stylesheet" href="css/bootstrap.min.css" />
-    <link rel="stylesheet" href="css/adhamCSS.css" />
-    <link rel="stylesheet" href="css/karimCSS.css" />
-  </head>
-  <body>
-<body>
-      <!-- Nav Links -->
-      <div class="collapse navbar-collapse justify-content-end" id="navbarNavDropdown">
-        <ul class="navbar-nav align-items-center">
-          <li class="nav-item">
-            <a class="nav-link active" aria-current="page" href="01-home.html">Home</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="08-services.html">Services</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="07-events.html">Events</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="02-aboutus.html">About</a>
-          </li>
-
-         <!-- Login Button -->
-<li class="nav-item ms-3">
-  <a
-    href="login.html"
-    class="btn btn-primary login-btn"
-    style="background-color: #2563eb; color: white; font-weight: 500;"
-  >
-    LOGIN
-  </a>
-</li>
-        </ul>
-      </div>
-    </div>
-  </nav>
 </div>
 
                 <a
@@ -180,5 +218,9 @@
     © 2026 Rowin Academy. All rights reserved.
   </div>
 </footer>
+    <script src="js/bootstrap.bundle.min.js"></script>
+    <script src="js/all.min.js"></script>
+    <script src="js/auth.js"></script>
+  </body>
 </body>
 </html>

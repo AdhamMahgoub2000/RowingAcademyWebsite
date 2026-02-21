@@ -14,6 +14,8 @@
        <!-- CSS Files -->
     <link rel="stylesheet" href="css/all.min.css" />
     <link rel="stylesheet" href="css/karimCSS.css" />  
+    <link rel="stylesheet" href="css/adhamCSS.css" />  
+
 
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="css/bootstrap.min.css" />
@@ -66,28 +68,98 @@
 <body>
 
 <!-- ================= NAVBAR ================= -->
-<nav class="navbar navbar-expand-lg navbar-light bg-white shadow-sm py-3">
-  <div class="container">
-        <img src="images/logo.png" alt="Logo" style="height: 40px;">
+<nav class="navbar navbar-expand-lg sticky-top" style="background-color: white">
+        <div class="container">
+          <a class="navbar-brand" href="#"
+            ><img
+              src="images/recolored-logo.png"
+              style="width: 10rem; color: black"
+              alt="Rowin Academy Logo"
+          /></a>
+          <button
+            class="navbar-toggler"
+            type="button"
+            data-bs-toggle="collapse"
+            data-bs-target="#navbarNavDropdown"
+            aria-controls="navbarNavDropdown"
+            aria-expanded="false"
+            aria-label="Toggle navigation"
+          >
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div
+            class="collapse navbar-collapse justify-content-end"
+            id="navbarNavDropdown"
+          >
+            <ul class="navbar-nav gap-4" style="font-size: 1.05rem;">
+              <li class="nav-item">
+                <a class="nav-link" href="01-home.html">Home</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link active" href="02-services.html">Services</a>
+              </li>
+              <li class="nav-item">
+                <a
+                  class="nav-link "
+                  aria-current="page"
+                  href="03-events.html"
+                  >Events</a
+                >
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="04-bookings.html">Bookings</a>
+              </li>
+                            <li class="nav-item">
+                <a class="nav-link" href="05-contact.html">Contact Us</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="06-about.html">About Us</a>
+              </li>
+              <li
+                class="nav-item dropdown profile-icon"
+                style=" border-left: 2px solid rgba(0, 0, 0, 0.179)"
+              >
+                <a
+                  class="nav-link dropdown-toggle"
+                  href="#"
+                  role="button"
+                  data-bs-toggle="dropdown"
+                  aria-expanded="false"
+                >
+                  <i
+                    class="fa-solid fa-circle-user"
+                    style="color: var(--light-color)"
+                  ></i>
+                  <span class="user-name"></span>
+                </a>
+                <ul class="dropdown-menu">
+                  <li class="dropdown-item">
+                    <a href="" class="logout-btn" style="color: black"
+                      >Logout
+                      <i class="fa fa-sign-out" style="color: black"></i>
+                    </a>
+                  </li>
+                </ul>
+              </li>
+              <li class="nav-item">
+                <a
+                  href="login.html"
+                  class="join-btn login-icon"
+                  style="background-color: var(--blue-color)"
+                  >LOGIN</a
+                >
+                <a
+                  href="register.html"
+                  class="join-btn register-icon"
+                  style="background-color: var(--orange-color)"
+                  >Join Now</a
+                >
+              </li>
+            </ul>
+          </div>
+        </div>
+      </nav>
 
-    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
-      <span class="navbar-toggler-icon"></span>
-    </button>
-
-    <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
-      <ul class="navbar-nav align-items-center">
-        <li class="nav-item"><a class="nav-link" href="01-home.html">Home</a></li>
-        <li class="nav-item"><a class="nav-link active" href="08-services.html">Services</a></li>
-        <li class="nav-item"><a class="nav-link" href="07-events.html">Events</a></li>
-        <li class="nav-item"><a class="nav-link" href="02-aboutus.html">About</a></li>
-        <li class="nav-item"><a class="nav-link" href="09-contact.html">Contact</a></li>
-        <li class="nav-item ms-3">
-          <a href="login.html" class="btn btn-primary px-4">LOGIN</a>
-        </li>
-      </ul>
-    </div>
-  </div>
-</nav>
 
 <!-- ================= HERO ================= -->
 <section class="hero" style="height: 50vh;">
@@ -173,6 +245,65 @@
     </div>
   </div>
 </section>
+<section class="programs py-5">
+  <div class="container">
+    <h2 class="section-title text-center mb-5">
+      Explore Our Training Programs
+    </h2>
+
+    <div class="row g-4">
+
+      <!-- Beginner Rowing -->
+      <div class="col-md-3 col-sm-6">
+        <div class="card program-card h-100">
+          <img src="https://i.ytimg.com/vi/pimXQ8xQMd0/maxresdefault.jpg"
+               class="card-img-top" alt="Beginner Rowing">
+          <div class="card-body text-center">
+            <h5>Beginner Program</h5>
+            <p>Learn basic techniques and build strong fundamentals.</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Competitive Program -->
+      <div class="col-md-3 col-sm-6">
+        <div class="card program-card h-100">
+          <img src="https://as1.ftcdn.net/v2/jpg/07/66/40/96/1000_F_766409614_cJcb7GZbdpzXOkcufyJbXdffgwyunWew.jpg"
+               class="card-img-top" alt="Competitive Program">
+          <div class="card-body text-center">
+            <h5>Competitive Program</h5>
+            <p>Advanced coaching and race preparation for elite-level.</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Summer Camp -->
+      <div class="col-md-3 col-sm-6">
+        <div class="card program-card h-100">
+          <img src="https://www.britishrowing.org/wp-content/uploads/2018/04/Competition-Framework-goes-live.jpg"
+               class="card-img-top" alt="Summer Camp">
+          <div class="card-body text-center">
+            <h5>Summer Camp</h5>
+            <p>Intensive training and fun activities for all ages during the summer.</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Indoor Training -->
+      <div class="col-md-3 col-sm-6">
+        <div class="card program-card h-100">
+          <img src="https://static01.nyt.com/images/2022/11/08/multimedia/26WNT-ROWING-WORKOUT5-1-310a/26WNT-ROWING-WORKOUT5-1-310a-videoSixteenByNineJumbo1600.jpg"
+               class="card-img-top" alt="Indoor Training">
+          <div class="card-body text-center">
+            <h5>Indoor Training</h5>
+            <p>Year-round fitness and technique training using indoor machines.</p>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
 
 <!-- ================= FOOTER ================= -->
   <!-- FOOTER -->
@@ -233,5 +364,9 @@
     © 2026 Rowin Academy. All rights reserved.
   </div>
 </footer>
+    <script src="js/bootstrap.bundle.min.js"></script>
+    <script src="js/all.min.js"></script>
+    <script src="js/auth.js"></script>
+  </body>
 </body>
 </html>
