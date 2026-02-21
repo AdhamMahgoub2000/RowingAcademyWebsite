@@ -91,6 +91,9 @@ let checkUserpass = async function (email_entered, password_entered) {
         return "User is Not Found";
         }
         if (email_checked[0].password === password_entered) {
+          if(email_entered === "admin@rowin.com"){
+            window.location.href = "dashboard.html"
+          }
         return true;
         }
         return false;
@@ -161,3 +164,4 @@ function logout() {
 
     window.location.reload();
 }
+let user = localStorage.getItem("user")

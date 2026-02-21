@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Services - Rowin Academy</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Bootstrap -->
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+
+    <!-- Google Font -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+
+       <!-- CSS Files -->
+    <link rel="stylesheet" href="css/all.min.css" />
+    <link rel="stylesheet" href="css/karimCSS.css" />  
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="css/bootstrap.min.css" />
+
+    <style>
+        body { font-family: 'Poppins', sans-serif; }
+
+        .service-card {
+            border: none;
+            border-radius: 15px;
+            overflow: hidden;
+            transition: 0.4s ease;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.08);
+        }
+
+        .service-card img {
+            height: 230px;
+            object-fit: cover;
+            transition: 0.4s ease;
+        }
+
+        .service-card:hover img {
+            transform: scale(1.1);
+        }
+
+        .service-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 40px rgba(37,99,235,0.25);
+        }
+
+        .service-card .card-body {
+            text-align: center;
+            padding: 25px;
+        }
+
+        .service-card h4 {
+            font-weight: 600;
+            color: #1e3a8a;
+        }
+
+        .section-title {
+            text-align: center;
+            font-weight: 700;
+            margin-bottom: 60px;
+            color: #1e3a8a;
+        }
+    </style>
+</head>
+
+<body>
+
+<!-- ================= NAVBAR ================= -->
+<nav class="navbar navbar-expand-lg navbar-light bg-white shadow-sm py-3">
+  <div class="container">
+        <img src="images/logo.png" alt="Logo" style="height: 40px;">
+
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
+      <ul class="navbar-nav align-items-center">
+        <li class="nav-item"><a class="nav-link" href="01-home.html">Home</a></li>
+        <li class="nav-item"><a class="nav-link active" href="08-services.html">Services</a></li>
+        <li class="nav-item"><a class="nav-link" href="07-events.html">Events</a></li>
+        <li class="nav-item"><a class="nav-link" href="02-aboutus.html">About</a></li>
+        <li class="nav-item"><a class="nav-link" href="09-contact.html">Contact</a></li>
+        <li class="nav-item ms-3">
+          <a href="login.html" class="btn btn-primary px-4">LOGIN</a>
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+<!-- ================= HERO ================= -->
+<section class="hero" style="height: 50vh;">
+    <div class="hero-content">
+        <h1>Our Services</h1>
+        <p>Experience premium water sports and training programs.</p>
+    </div>
+</section>
+
+<!-- ================= SERVICES SECTION ================= -->
+<section class="py-5">
+  <div class="container">
+    <h2 class="section-title">What We Offer</h2>
+
+    <div class="row g-4">
+
+      <!-- Rowing -->
+      <div class="col-md-4">
+        <div class="card service-card">
+          <img src="https://mir-s3-cdn-cf.behance.net/project_modules/1400/68ca43100036451.5effbb08e9738.jpg" class="card-img-top" alt="Rowing">
+          <div class="card-body">
+            <h4>Rowing Training</h4>
+            <p>Professional rowing programs for beginners and competitive athletes.</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Kayak -->
+      <div class="col-md-4">
+        <div class="card service-card">
+          <img src="https://www.civitatis.com/f/egipto/el-cairo/galeria/disfrutando-tour-kayak-rio-nilo.jpg" class="card-img-top" alt="Kayak">
+          <div class="card-body">
+            <h4>Kayak Adventures</h4>
+            <p>Guided kayak tours and exciting skill-based training sessions.</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- SUP -->
+      <div class="col-md-4">
+        <div class="card service-card">
+          <img src="https://nilesup.com/wp-content/uploads/2016/09/sup_taster_2.jpg" class="card-img-top" alt="SUP">
+          <div class="card-body">
+            <h4>Stand Up Paddle (SUP)</h4>
+            <p>Fun and fitness-focused paddleboarding for all skill levels.</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Private Coaching -->
+      <div class="col-md-4">
+        <div class="card service-card">
+          <img src="https://images.unsplash.com/photo-1558611848-73f7eb4001a1" class="card-img-top" alt="Coaching">
+          <div class="card-body">
+            <h4>Private Coaching</h4>
+            <p>One-on-one sessions to improve your technique and performance.</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Equipment Rental -->
+      <div class="col-md-4">
+        <div class="card service-card">
+          <img src="https://images.squarespace-cdn.com/content/v1/540adee3e4b03fd146a4f430/1571247077099-WXCP085LZED3KRHCLBML/DSC_0702.JPG" class="card-img-top" alt="Equipment">
+          <div class="card-body">
+            <h4>Equipment Rental</h4>
+            <p>High-quality rowing boats, kayaks, and paddleboards for rent.</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Fitness -->
+      <div class="col-md-4">
+        <div class="card service-card">
+          <img src="https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b" class="card-img-top" alt="Fitness">
+          <div class="card-body">
+            <h4>Fitness & Conditioning</h4>
+            <p>Strength and endurance programs tailored for water athletes.</p>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ================= FOOTER ================= -->
+  <!-- FOOTER -->
+  <footer class="footer">
+  <div class="footer-container">
+
+    <!-- Column 1 -->
+    <div class="footer-col">
+      <h2 class="footer-logo">Rowin Academy</h2>
+      <p class="footer-text">
+        Excellence in rowing education since 2010.
+        Building champions on and off the water.
+      </p>
+
+      <div class="social-icons">
+        <a href="#"><i class="fab fa-facebook-f"></i></a>
+        <a href="#"><i class="fab fa-instagram"></i></a>
+        <a href="#"><i class="fab fa-twitter"></i></a>
+      </div>
+    </div>
+
+    
+    <!-- Column 3 -->
+    <div class="footer-col">
+      <h3>Our Programs</h3>
+      <ul>
+        <li><a href="#">Youth Development</a></li>
+        <li><a href="#">Adult Recreational</a></li>
+        <li><a href="#">Competitive Racing</a></li>
+        <li><a href="#">Indoor Training</a></li>
+      </ul>
+    </div>
+
+    <!-- Column 4 -->
+    <div class="footer-col">
+      <h3>Contact Us</h3>
+
+      <div class="contact-item">
+        <i class="fas fa-map-marker-alt"></i>
+        <span>122 Nile Street, Giza ,Egypt</span>
+      </div>
+
+      <div class="contact-item">
+        <i class="fas fa-phone"></i>
+        <span>+201067001695</span>
+      </div>
+
+      <div class="contact-item">
+        <i class="fas fa-envelope"></i>
+        <span>info@rowinacademy.com</span>
+      </div>
+
+    </div>
+
+  </div>
+
+  <div class="footer-bottom">
+    © 2026 Rowin Academy. All rights reserved.
+  </div>
+</footer>
+</body>
+</html>

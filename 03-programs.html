@@ -1,27 +1,208 @@
- <section class="programs">
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Programs - Rowin Academy</title>
+
+    <!-- Bootstrap -->
+    <link rel="stylesheet" href="css/bootstrap.min.css" />
+
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+    <!-- Google Font -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+
+    <!-- Your Main CSS -->
+    <link rel="stylesheet" href="css/karimCSS.css">
+</head>
+
+<body>
+
+<!-- ================= NAVBAR ================= -->
+<nav>
+ <nav class="navbar">
+    <div class="logo">
+        <img src="images/logo.png" alt="Logo">
+    </div>
+
+    <ul class="nav-links">
+        <li><a href="01-home.html">Home</a></li>
+        <li><a href="08-services.html">Services</a></li>
+        <li><a href="07-events.html">Events</a></li>
+        <li><a href="02-aboutus.html">About</a></li>
+        <li><a href="06-contact.html">Contact</a></li>
+        <li><a href="login.html" class="join-btn">Login</a></li>
+    </ul>
+</nav>
+
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>About Us</title>
+    <link rel="stylesheet" href="css/all.min.css" />
+    <link rel="stylesheet" href="css/bootstrap.min.css" />
+    <link rel="stylesheet" href="css/adhamCSS.css" />
+    <link rel="stylesheet" href="css/karimCSS.css" />
+  </head>
+  <body>
+<body>
+      <!-- Nav Links -->
+      <div class="collapse navbar-collapse justify-content-end" id="navbarNavDropdown">
+        <ul class="navbar-nav align-items-center">
+          <li class="nav-item">
+            <a class="nav-link active" aria-current="page" href="01-home.html">Home</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="08-services.html">Services</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="07-events.html">Events</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="02-aboutus.html">About</a>
+          </li>
+
+         <!-- Login Button -->
+<li class="nav-item ms-3">
+  <a
+    href="login.html"
+    class="btn btn-primary login-btn"
+    style="background-color: #2563eb; color: white; font-weight: 500;"
+  >
+    LOGIN
+  </a>
+</li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+
+<!-- ================= PAGE HEADER ================= -->
+<section class="hero" style="height: 50vh;">
+  <div class="hero-content">
+    <h1>Our Programs</h1>
+    <p>Train. Compete. Achieve Excellence.</p>
+  </div>
+</section>
+
+
+<!-- ================= PROGRAMS SECTION ================= -->
+<section class="programs py-5">
   <div class="container">
-    <h2 class="section-title">Our Programs</h2>
+    <h2 class="section-title text-center mb-5">
+      Explore Our Training Programs
+    </h2>
 
-    <div class="cards">
+    <div class="row g-4">
 
-      <div class="card">
-        <h3>Beginner Rowing</h3>
-        <p>Learn basic rowing techniques, water safety, and build strong fundamentals.</p>
+      <!-- Beginner Rowing -->
+      <div class="col-md-3 col-sm-6">
+        <div class="card program-card h-100">
+          <img src="https://i.ytimg.com/vi/pimXQ8xQMd0/maxresdefault.jpg"
+               class="card-img-top" alt="Beginner Rowing">
+          <div class="card-body text-center">
+            <h5>Beginner Program</h5>
+            <p>Learn basic techniques and build strong fundamentals.</p>
+          </div>
+        </div>
       </div>
 
-      <div class="card">
-        <h3>Youth Development</h3>
-        <p>Structured training for young athletes focused on skill and teamwork.</p>
+      <!-- Competitive Program -->
+      <div class="col-md-3 col-sm-6">
+        <div class="card program-card h-100">
+          <img src="https://as1.ftcdn.net/v2/jpg/07/66/40/96/1000_F_766409614_cJcb7GZbdpzXOkcufyJbXdffgwyunWew.jpg"
+               class="card-img-top" alt="Competitive Program">
+          <div class="card-body text-center">
+            <h5>Competitive Program</h5>
+            <p>Advanced coaching and race preparation for elite-level.</p>
+          </div>
+        </div>
       </div>
 
-      <div class="card">
-        <h3>Competitive Program</h3>
-        <p>Advanced coaching and race preparation for elite-level rowers.</p>
+      <!-- Summer Camp -->
+      <div class="col-md-3 col-sm-6">
+        <div class="card program-card h-100">
+          <img src="https://www.britishrowing.org/wp-content/uploads/2018/04/Competition-Framework-goes-live.jpg"
+               class="card-img-top" alt="Summer Camp">
+          <div class="card-body text-center">
+            <h5>Summer Camp</h5>
+            <p>Intensive training and fun activities for all ages during the summer.</p>
+          </div>
+        </div>
       </div>
 
-      <div class="card">
-        <h3>Summer Camp</h3>
-        <p>Intensive seasonal training combined with fun team activities.</p>
+      <!-- Indoor Training -->
+      <div class="col-md-3 col-sm-6">
+        <div class="card program-card h-100">
+          <img src="https://static01.nyt.com/images/2022/11/08/multimedia/26WNT-ROWING-WORKOUT5-1-310a/26WNT-ROWING-WORKOUT5-1-310a-videoSixteenByNineJumbo1600.jpg"
+               class="card-img-top" alt="Indoor Training">
+          <div class="card-body text-center">
+            <h5>Indoor Training</h5>
+            <p>Year-round fitness and technique training using indoor machines.</p>
+          </div>
+        </div>
       </div>
 
     </div>
+  </div>
+</section>
+
+
+<!-- ================= FOOTER ================= -->
+<footer class="footer mt-5">
+  <div class="footer-container">
+
+    <div class="footer-col">
+      <h2 class="footer-logo">Rowin Academy</h2>
+      <p class="footer-text">
+        Excellence in rowing education since 2010.
+        Building champions on and off the water.
+      </p>
+      <div class="social-icons">
+        <a href="#"><i class="fab fa-facebook-f"></i></a>
+        <a href="#"><i class="fab fa-instagram"></i></a>
+        <a href="#"><i class="fab fa-twitter"></i></a>
+      </div>
+    </div>
+
+    <div class="footer-col">
+      <h3>Our Programs</h3>
+      <ul>
+        <li><a href="#">Youth Development</a></li>
+        <li><a href="#">Beginner Rowing</a></li>
+        <li><a href="#">Competitive Racing</a></li>
+        <li><a href="#">Summer Camp</a></li>
+      </ul>
+    </div>
+
+    <div class="footer-col">
+      <h3>Contact Us</h3>
+      <div class="contact-item">
+        <i class="fas fa-map-marker-alt"></i>
+        <span>122 Nile Street, Giza, Egypt</span>
+      </div>
+      <div class="contact-item">
+        <i class="fas fa-phone"></i>
+        <span>+201067001695</span>
+      </div>
+      <div class="contact-item">
+        <i class="fas fa-envelope"></i>
+        <span>info@rowinacademy.com</span>
+      </div>
+    </div>
+
+  </div>
+
+  <div class="footer-bottom">
+    © 2026 Rowin Academy. All rights reserved.
+  </div>
+</footer>
+
+
+<!-- Bootstrap JS -->
+<script src="js/bootstrap.bundle.min.js"></script>
+
+</body>
+</html>
