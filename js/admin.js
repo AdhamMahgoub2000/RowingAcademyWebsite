@@ -1,4 +1,4 @@
-const bookings_api_url = api_url + "Bookings";
+c
 
 function createBookingRow(index, booking) {
   const tr = document.createElement("tr");

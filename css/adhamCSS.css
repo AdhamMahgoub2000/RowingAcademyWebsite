@@ -3,7 +3,7 @@
     --blue-color :rgb(34, 56, 145);
     --orange-color : rgb(248, 158, 69);
 }
-* {
+*{
     margin: 0;
     padding: 0;
     box-sizing: border-box;
@@ -16,10 +16,10 @@
 .nav-item .nav-link.active{
     color: var(--light-color) !important;}
 /* start aboutUs */
+
 .landing{
-    background-color: var(--blue-color);
-    color: white;
-    height: 15rem;
+    color: rgb(255, 255, 255);
+    height: 25rem;
 }
 .logout-btn{
     
@@ -79,8 +79,36 @@ display: none;
     text-align: center;
 }
 /* end aboutUs */
+@media (min-width: 992px) {
+  .navbar {
+    position: sticky;
+    top: 0;
+    z-index: 1020; 
+  }}
+
+
 @media screen and (max-width: 768px){
     *{
         font-size: 0.8rem;
     }
+
+}
+@media (max-width: 991.98px) {
+  /* ADD THIS BLOCK */
+  .navbar {
+    position: relative !important; /* Forces the nav into the document flow */
+    height: auto !important;       /* Allows the nav to grow when menu opens */
+    overflow: visible !important;  /* Ensures content isn't cut off */
+  }
+
+  /* Your existing code for inner collapse */
+  .navbar-collapse {
+    position: static !important;
+    width: 100%;
+  }
+
+  .navbar-nav {
+    background-color: white;
+    padding: 1rem 0;
+  }
 }

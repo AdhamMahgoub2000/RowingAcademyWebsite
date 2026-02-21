@@ -3,32 +3,19 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Rowin Academy</title>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>About Us</title>
+    <title>Events - Rowin Academy</title>
     <link rel="stylesheet" href="css/all.min.css" />
-    <link rel="stylesheet" href="css/adhamCSS.css" />
     <link rel="stylesheet" href="css/bootstrap.min.css" />
+    <link rel="stylesheet" href="css/adhamCSS.css" />
     <link rel="stylesheet" href="css/karimCSS.css" />
-
-    <!-- Font Awesome -->
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
-    />
-
-    <!-- Google Font -->
     <link
       href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap"
       rel="stylesheet"
     />
   </head>
-
   <body>
-    <!-- ================= NAVBAR ================= -->
     <nav
-      class="navbar navbar-expand-lg navbar-light"
+      class="navbar navbar-expand-lg sticky-top"
       style="background-color: white"
     >
       <div class="container">
@@ -55,7 +42,7 @@
         >
           <ul class="navbar-nav gap-4" style="font-size: 1.05rem">
             <li class="nav-item">
-              <a class="nav-link active" href="01-home.html">Home</a>
+              <a class="nav-link" href="01-home.html">Home</a>
             </li>
             <li class="nav-item">
               <a class="nav-link" href="02-services.html">Services</a>
@@ -93,9 +80,7 @@
               </a>
               <ul class="dropdown-menu">
                 <li class="dropdown-item">
-                  <a
-                    href="profile.html"
-                    style="color: black; text-decoration: none"
+                  <a href="" class="logout-btn" style="color: black"
                     >View Profile
                   </a>
                 </li>
@@ -125,48 +110,97 @@
         </div>
       </div>
     </nav>
-
-    <!-- ================= HERO ================= -->
-
-    <section class="hero">
-      <div class="hero-content">
-        <h1>Master the Art of Rowing</h1>
-        <p>Transform your passion into performance at Rowin Academy.</p>
-
-        <div class="hero-buttons">
-            <a href="03-programs.html" class="btn-primary">Explore Programs</a>
-            <a href="register.html" class="btn-secondary">Register</a>
+<section class="container my-5">
+      <div class="row">
+        <div class="col-2">
+          <i
+            class="fa-solid fa-circle-user"
+            style="width: 10rem; height: auto"
+          ></i>
         </div>
-    </div>
-</section>
-
-    </div>
-
-
-  </div>
-</section>
-
-
-</body>
-</html>
-
-
-    <!-- FOOTER -->
+        <div class="col-6">
+          <h1 id="profile-name"></h1>
+          <p id="profile-email" style="opacity: 0.6"></p>
+          <p id="profile-number" style="opacity: 0.6"></p>
+          <p id="upcoming-sessions" style="opacity: 0.6"></p>
+        </div>
+      </div>
+    </section>
+    <!-- Upcoming Sessions -->
+    <section class="container p-5">
+      <div class="card shadow-sm">
+        <div class="card-header">
+          <h4 class="fw-medium">Upcoming Bookings</h4>
+        </div>
+        <div class="card-body table-responsive">
+          <table class="table table-hover" id="upcoming">
+            <thead class="table-dark">
+              <tr>
+                <th>#</th>
+                <th>Session Type</th>
+                <th>Session Date</th>
+                <th>Session Time</th>
+              </tr>
+            </thead>
+            <tbody></tbody>
+          </table>
+        </div>
+      </div>
+    </section>
+    <!-- ALL Sessions -->
+    <section class="container p-5">
+      <div class="card shadow-sm">
+        <div class="card-header">
+          <h4 class="fw-medium">All Bookings</h4>
+        </div>
+        <div class="card-body table-responsive">
+          <table class="table table-hover" id="allBookings">
+            <thead class="table-dark">
+              <tr>
+                <th>#</th>
+                <th>Session Type</th>
+                <th>Session Date</th>
+                <th>Session Time</th>
+              </tr>
+            </thead>
+            <tbody></tbody>
+          </table>
+        </div>
+      </div>
+    </section>
     <footer class="footer">
       <div class="footer-container">
         <!-- Column 1 -->
         <div class="footer-col">
           <h2 class="footer-logo">Rowin Academy</h2>
           <p class="footer-text">
-            Excellence in rowing education since 2010. Building champions on and
+            Excellence in rowing education since 2017. Building champions on and
             off the water.
           </p>
 
           <div class="social-icons">
-            <a href="#"><i class="fab fa-facebook-f"></i></a>
-            <a href="#"><i class="fab fa-instagram"></i></a>
-            <a href="#"><i class="fab fa-twitter"></i></a>
+            <a href="https://www.facebook.com/rowin.eg"
+              ><i class="fab fa-facebook-f"></i
+            ></a>
+            <a href="https://www.instagram.com/rowin.eg"
+              ><i class="fab fa-instagram"></i
+            ></a>
+            <a href="https://wa.me/201140637023"
+              ><i class="fab fa-whatsapp"></i
+            ></a>
           </div>
+        </div>
+
+        <!-- Column 2 -->
+        <div class="footer-col">
+          <h3>Quick Links</h3>
+          <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="services.html">Services</a></li>
+            <li><a href="events.html">Events</a></li>
+            <li><a href="bookings.html">Bookings</a></li>
+            <li><a href="aboutus.html">About Us</a></li>
+          </ul>
         </div>
 
         <!-- Column 3 -->
@@ -186,17 +220,17 @@
 
           <div class="contact-item">
             <i class="fas fa-map-marker-alt"></i>
-            <span>122 Nile Street, Giza ,Egypt</span>
+            <span>1122 El Nil st., Dokki, Giza</span>
           </div>
 
           <div class="contact-item">
             <i class="fas fa-phone"></i>
-            <span>+201067001695</span>
+            <span>+20 11 4063 7023</span>
           </div>
 
           <div class="contact-item">
             <i class="fas fa-envelope"></i>
-            <span>info@rowinacademy.com</span>
+            <span>info@rowinegy.com</span>
           </div>
         </div>
       </div>
@@ -205,8 +239,12 @@
         © 2026 Rowin Academy. All rights reserved.
       </div>
     </footer>
+    <script>
+
+    </script>
     <script src="js/bootstrap.bundle.min.js"></script>
     <script src="js/all.min.js"></script>
     <script src="js/auth.js"></script>
+    <script src="js/profile.js"></script>
   </body>
 </html>
