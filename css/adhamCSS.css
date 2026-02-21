@@ -16,9 +16,17 @@
 .nav-item .nav-link.active{
     color: var(--light-color) !important;}
 /* start aboutUs */
-
-.landing{
+.landing-profile{
+    padding: 3rem;
     background-color: var(--blue-color);
+    color: rgb(255, 255, 255);
+}
+.landing-dashboard{
+    background-color: var(--blue-color);
+    color: rgb(255, 255, 255);
+    height: 25rem;
+}
+.landing{
     color: rgb(255, 255, 255);
     height: 25rem;
 }
