@@ -13,10 +13,27 @@
       href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap"
       rel="stylesheet"
     />
+    <style>
+.about-us {
+  position: relative;
+  height: 25rem;
+  overflow: hidden;
+}
+
+.about-us::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: url("images/cover3.jpeg") center/cover no-repeat;
+  filter: blur(1px);
+  opacity: 0.6; 
+  z-index: -1;
+}
+    </style>
   </head>
   <body>
     <nav
-      class="navbar navbar-expand-lg sticky-top"
+      class="navbar navbar-expand-lg navbar-light"
       style="background-color: white"
     >
       <div class="container">
@@ -108,10 +125,12 @@
     </nav>
 
     <!-- Landing -->
-    <section class="container-fluid landing d-flex align-items-center mr-5">
-      <div class="text-left m-5" style="width: 80%">
-        <h1 class="display-3 fw-medium">About US</h1>
-        <p class="fs-5" style="width: 70%">
+    <section
+      class="container-fluid landing d-flex align-items-center mr-5 about-us"
+    >
+      <div class="text-left m-5">
+        <h1 class="display-5 fw-medium">About US</h1>
+        <p style="width: 70%; font-size: 1rem">
           Since 2017, we've been Cairo's premier rowing academy, dedicated to
           developing athletes and fostering a lifelong love of the sport.
         </p>

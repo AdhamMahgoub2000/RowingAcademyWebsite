@@ -12,6 +12,23 @@
       href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap"
       rel="stylesheet"
     />
+    <style>
+      .event {
+  position: relative;
+  height: 25rem;
+  overflow: hidden;
+}
+
+.event::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: url("images/cover2.JPG") center/cover no-repeat;
+  filter: blur(1px);
+  opacity: 0.6; 
+  z-index: -1;
+}
+    </style>
   </head>
   <body>
     <nav
@@ -110,10 +127,10 @@
     </nav>
 
     <!-- Landing Section -->
-    <section class="container-fluid landing d-flex align-items-center mr-5">
+    <section class="container-fluid landing d-flex align-items-center mr-5 event">
       <div class="text-left m-5" style="width: 80%">
-        <h1 class="display-3 fw-medium">Our Events & Adventures</h1>
-        <p class="fs-5" style="width: 70%">
+        <h1 class="fw-semibold">Our Events & Adventures</h1>
+        <p style="width: 70%; font-size: 1rem;">
           Beyond daily training, we organize spectacular team building
           activities, host premier competitions, and travel for unforgettable
           rowing trips across Egypt.
@@ -130,7 +147,7 @@
         style="font-size: 1.2rem; text-align: justify"
       >
         <div class="col-lg-6 col-sm-12">
-          <h1 class="display-5 fw-medium mb-4">Team Building Events</h1>
+          <h1 class="fw-semibold mb-4">Team Building Events</h1>
           <h3 class="fw-semibold" style="color: var(--blue-color)">
             Corporate Rowing Days
           </h3>
