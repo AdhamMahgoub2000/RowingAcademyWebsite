@@ -1,0 +1,377 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+<!-- ================= NAVBAR ================= -->
+    <meta charset="UTF-8" />  
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>About Us</title>
+    <link rel="stylesheet" href="css/all.min.css" />
+    <link rel="stylesheet" href="css/bootstrap.min.css" />
+    <link rel="stylesheet" href="css/adhamCSS.css" />
+    <link rel="stylesheet" href="css/karimCSS.css" />
+  </head>
+  <body>
+      <nav class="navbar navbar-expand-lg sticky-top" style="background-color: white">
+        <div class="container">
+          <a class="navbar-brand" href="#"
+            ><img
+              src="images/recolored-logo.png"
+              style="width: 10rem; color: black"
+          /></a>
+          <button
+            class="navbar-toggler"
+            type="button"
+            data-bs-toggle="collapse"
+            data-bs-target="#navbarNavDropdown"
+            aria-controls="navbarNavDropdown"
+            aria-expanded="false"
+            aria-label="Toggle navigation"
+          >
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div
+            class="collapse navbar-collapse justify-content-end"
+            id="navbarNavDropdown"
+          >
+            <ul class="navbar-nav gap-4 " style="font-size: 1.05rem;">
+              <li class="nav-item">
+                <a class="nav-link " aria-current="page" href="01-home.html">Home</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="08-services.html">Services</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="04-events.html">Events</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="05-bookings.html">Bookings</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link active" href="07-about.html">About Us</a>
+              </li>
+              <li
+                class="nav-item dropdown profile-icon"
+                style=" border-left: 2px solid rgba(0, 0, 0, 0.179)"
+              >
+                <a
+                  class="nav-link dropdown-toggle"
+                  href="#"
+                  role="button"
+                  data-bs-toggle="dropdown"
+                  aria-expanded="false"
+                >
+                  <i
+                    class="fa-solid fa-circle-user"
+                    style="color: var(--light-color)"
+                  ></i>
+                  <span class="user-name"></span>
+                </a>
+                <ul class="dropdown-menu" >
+                  <li class="dropdown-item">
+                    <a href="" class="logout-btn" style="color: black"
+                      >Logout
+                      <i class="fa fa-sign-out" style="color: black"></i>
+                    </a>
+                  </li>
+                </ul>
+              </li>
+              <li class="nav-item">
+                <a
+                  href="login.html"
+                  class="join-btn login-icon"
+                  style="background-color: var(--blue-color)"
+                  >LOGIN</a
+                >
+                <a
+                  href="register.html"
+                  class="join-btn register-icon"
+                  style="background-color: var(--orange-color)"
+                  >Join Now</a
+                >
+              </li>
+            </ul>
+          </div>
+        </div>
+      </nav>
+
+    <!-- Landing -->
+    <section class="container-fluid landing d-flex align-items-center mr-5">
+      <div class="text-left m-5" style="width: 80%">
+        <h1 class="display-3 fw-medium">About US</h1>
+        <p class="fs-5" style="width: 70%">
+          Since 2017, we've been Cairo's premier rowing academy, dedicated to
+          developing athletes and fostering a lifelong love of the sport.
+        </p>
+        <div class="profile"></div>
+      </div>
+    </section>
+    <!-- Story -->
+    <section
+      class="container-fluid story d-flex flex-column flex-md-row align-items-center justify-content-between p-5"
+    >
+      <div
+        class="row d-flex justify-content-between"
+        style="font-size: 1.2rem; text-align: justify"
+      >
+        <div class="col-lg-6 col-sm-12">
+          <h1 class="display-5 fw-medium">Our Story</h1>
+          <p>
+            Rowin Academy was founded in 2017 by a group of passionate rowers
+            who saw the need for a comprehensive rowing program on the Nile
+            River. What started as a small club with just 15 members has grown
+            into one of the most respected rowing academies on the Nile.
+          </p>
+          <p>
+            Over the past 9 years, we've trained over 2,000 athletes, produced
+            numerous national champions, and sent several rowers to compete at
+            the collegiate and Olympic levels. But our greatest achievement is
+            building a community where rowers of all ages and abilities can
+            pursue their passion for the sport.
+          </p>
+        </div>
+        <div class="col-lg-6 col-sm-12 d-flex justify-content-end">
+          <img src="images/storyimage.jpeg" class="image" />
+        </div>
+      </div>
+    </section>
+    <!-- Values -->
+    <section class="container-fluid values p-5">
+      <div class="text-center">
+        <h1 class="display-5 fw-medium my-3">Our Values</h1>
+        <p class="fs-5 my-3">
+          These core principles guide everything we do at Rowin Academy
+        </p>
+      </div>
+      <div class="row d-flex justify-content-center">
+        <div class="col-lg-2 card m-3 shadow" style="width: 18rem">
+          <div class="d-flex justify-content-center">
+            <i class="fa-solid fa-award d-flex justify-content-center icon"></i>
+          </div>
+          <div class="card-body">
+            <h5 class="card-title text-center">Excellence</h5>
+            <p class="card-text text-center">
+              We strive for the highest standards in coaching, facilities, and
+              athlete development.
+            </p>
+          </div>
+        </div>
+        <div class="col-lg-2 card m-3 shadow" style="width: 18rem">
+          <div class="d-flex justify-content-center">
+            <i
+              class="fa-regular fa-heart d-flex justify-content-center icon"
+            ></i>
+          </div>
+          <div class="card-body">
+            <h5 class="card-title text-center">Passion</h5>
+            <p class="card-text text-center">
+              Our love for rowing drives everything we do, from coaching to
+              community building.
+            </p>
+          </div>
+        </div>
+        <div class="col-lg-2 card m-3 shadow" style="width: 18rem">
+          <div class="d-flex justify-content-center">
+            <i
+              class="fa-regular fa-circle-dot d-flex justify-content-center icon"
+            ></i>
+          </div>
+          <div class="card-body">
+            <h5 class="card-title text-center">Dedication</h5>
+            <p class="card-text text-center">
+              We're committed to helping every athlete reach their full
+              potential on the water.
+            </p>
+          </div>
+        </div>
+        <div class="col-lg-2 card m-3 shadow" style="width: 18rem">
+          <div class="d-flex justify-content-center">
+            <i class="fa-solid fa-users d-flex justify-content-center icon"></i>
+          </div>
+          <div class="card-body">
+            <h5 class="card-title text-center">Community</h5>
+            <p class="card-text text-center">
+              We foster a supportive, inclusive environment where rowers of all
+              levels thrive together.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- Coaches -->
+    <section class="container-fluid coaches p-5">
+      <div class="text-center mb-5">
+        <h1 class="display-5 fw-medium">Meet Our Coaches</h1>
+        <p class="fs-5">Professional guidance from elite rowing experts</p>
+      </div>
+
+      <div
+        class="row align-items-center mb-5 shadow-sm"
+        style="background-color: white; border-radius: 20px"
+      >
+        <div class="col-md-6 p-5">
+          <h3 class="fw-semibold">Coach Asmaa El-Zohairy</h3>
+          <p class="fs-5" style="color: var(--light-color)">
+            Founder of Rowin Academy
+          </p>
+          <p>
+            Multiple-time national champion, Egyptian lightweight record holder,
+            and certified fitness trainer dedicated to elite athlete
+            development.
+          </p>
+        </div>
+        <div class="col-md-6 d-flex justify-content-end p-0">
+          <img
+            src="images/asmaa.jpeg"
+            class="img-fluid shadow coach-img"
+            alt="Coach asmaa"
+          />
+        </div>
+      </div>
+      <div class="row align-items-center mb-5 flex-md-row-reverse">
+        <div class="col-md-6">
+          <h3 class="fw-semibold">Coach Adham Mahgoub</h3>
+          <p class="fs-5" style="color: var(--light-color)">
+            Advanced Team Lead Coach
+          </p>
+          <p>
+            4-time World Rowing Championship medalist, 8-time African
+            Championship medalist, and experienced rowing coach with over three
+            years of athlete development expertise.
+          </p>
+        </div>
+        <div class="col-md-6 d-flex justify-content-start p-0">
+          <img
+            src="images/adham.jpeg"
+            class="img-fluid shadow coach-img"
+            alt="Coach Adham"
+          />
+        </div>
+      </div>
+      <div
+        class="row align-items-center mb-5 shadow-sm"
+        style="background-color: white; border-radius: 20px"
+      >
+        <div class="col-md-6 p-5">
+          <h3 class="fw-semibold">Coach Rana Seddik</h3>
+          <p class="fs-5" style="color: var(--light-color)">
+            Strength & conditioning specialist.
+          </p>
+          <p>
+            Focused on injury prevention, performance optimization, and
+            long-term athlete development.
+          </p>
+        </div>
+        <div class="col-md-6 d-flex justify-content-end p-0">
+          <img
+            src="images/rana.jpeg"
+            class="img-fluid shadow coach-img"
+            alt="Coach rana"
+          />
+        </div>
+      </div>
+    </section>
+    <!-- Achievements -->
+    <section class="container-fluid achi p-5">
+      <div class="text-center">
+        <h1 class="display-5 fw-medium">Our Achievements</h1>
+      </div>
+      <div
+        class="row d-flex justify-content-between align-items-center mt-5 mx-5 achi"
+      >
+        <div class="col-lg-2 col-sm-12">
+          <h1 class="">50+</h1>
+          <p class="achi">National Championships</p>
+        </div>
+        <div class="col-lg-2 col-sm-12">
+          <h1>15</h1>
+          <p class="achi">Masters Rowing</p>
+        </div>
+        <div class="col-lg-2 col-sm-12">
+          <h1>200+</h1>
+          <p class="achi">Recreational Rowers</p>
+        </div>
+        <div class="col-lg-2 col-sm-12">
+          <h1>98%</h1>
+          <p class="achi">Member Satisfaction</p>
+        </div>
+      </div>
+    </section>
+    <!-- FOOTER -->
+    <footer class="footer">
+      <div class="footer-container">
+        <!-- Column 1 -->
+        <div class="footer-col">
+          <h2 class="footer-logo">Rowin Academy</h2>
+          <p class="footer-text">
+            Excellence in rowing education since 2017. Building champions on and
+            off the water.
+          </p>
+
+          <div class="social-icons">
+            <a href="https://www.facebook.com/rowin.eg"
+              ><i class="fab fa-facebook-f"></i
+            ></a>
+            <a href="https://www.instagram.com/rowin.eg"
+              ><i class="fab fa-instagram"></i
+            ></a>
+            <a href="https://wa.me/201140637023"
+              ><i class="fab fa-whatsapp"></i
+            ></a>
+          </div>
+        </div>
+
+        <!-- Column 2 -->
+        <div class="footer-col">
+          <h3>Quick Links</h3>
+          <ul>
+            <li><a href="#">Home</a></li>
+            <li><a href="#">Services</a></li>
+            <li><a href="#">Events</a></li>
+            <li><a href="#">Bookings</a></li>
+            <li><a href="#">About Us</a></li>
+          </ul>
+        </div>
+
+        <!-- Column 3 -->
+        <div class="footer-col">
+          <h3>Our Programs</h3>
+          <ul>
+            <li><a href="#">Youth Development</a></li>
+            <li><a href="#">Adult Recreational</a></li>
+            <li><a href="#">Competitive Racing</a></li>
+            <li><a href="#">Indoor Training</a></li>
+          </ul>
+        </div>
+
+        <!-- Column 4 -->
+        <div class="footer-col">
+          <h3>Contact Us</h3>
+
+          <div class="contact-item">
+            <i class="fas fa-map-marker-alt"></i>
+            <span>1122 El Nil st., Dokki, Giza</span>
+          </div>
+
+          <div class="contact-item">
+            <i class="fas fa-phone"></i>
+            <span>+20 11 4063 7023</span>
+          </div>
+
+          <div class="contact-item">
+            <i class="fas fa-envelope"></i>
+            <span>info@rowinegy.com</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        © 2026 Rowin Academy. All rights reserved.
+      </div>
+    </footer>
+
+    <script src="js/bootstrap.bundle.min.js"></script>
+    <script src="js/all.min.js"></script>
+    <script src="js/auth.js"></script>
+  </body>
+</html>
