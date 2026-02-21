@@ -2,7 +2,8 @@ const bookings_api_url = api_url + "Bookings";
 document.addEventListener("DOMContentLoaded", async function(){
     let isLoggedIn = localStorage.getItem("isLoggedIn") || sessionStorage.getItem("isLoggedIn");
     if (!isLoggedIn){
-        window.location.href = "login.html"
+       let currentPage = window.location.pathname.split("/").pop();
+        window.location.href = "login.html?redirect=" + currentPage;
     }else{
 document.getElementById("profile-name").textContent=my_user.name
 document.getElementById("profile-email").textContent=my_user.email_address
