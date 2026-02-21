@@ -9,6 +9,7 @@
     <link rel="stylesheet" href="css/adhamCSS.css" />
     <link rel="stylesheet" href="css/karimCSS.css" />
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+
   </head>
   <body>
     <nav
@@ -105,6 +106,139 @@
         </div>
       </div>
     </nav>
+  <title>Book a Session | Rowin Academy</title>
+
+  
+  <style>
+    body {
+      font-family: 'Poppins', sans-serif;
+      background: #f8f9fa;
+    }
+
+    .booking-section {
+      padding: 80px 0;
+    }
+
+    .booking-card {
+      border-radius: 15px;
+      padding: 40px;
+      background: white;
+      box-shadow: 0 15px 40px rgba(0,0,0,0.05);
+    }
+
+    .booking-title {
+      font-weight: 700;
+      margin-bottom: 30px;
+      text-align: center;
+    }
+
+    .form-control, .form-select {
+      border-radius: 10px;
+      padding: 12px;
+    }
+
+    .btn-book {
+      background-color: #2563eb;
+      border: none;
+      padding: 12px;
+      border-radius: 30px;
+      font-weight: 500;
+      transition: 0.3s ease;
+    }
+
+    .btn-book:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 10px 20px rgba(37,99,235,0.3);
+    }
+  </style>
+</head>
+
+<body>
+
+<!-- ================= BOOKING FORM ================= -->
+
+<section class="booking-section">
+  <div class="container">
+    <div class="row justify-content-center">
+      <div class="col-lg-8">
+        <div class="booking-card">
+
+          <h2 class="booking-title">Book Your Session</h2>
+
+          <form>
+
+            <!-- Full Name -->
+            <div class="mb-3">
+              <label class="form-label">Full Name</label>
+              <input type="text" class="form-control" placeholder="Enter your full name" required>
+            </div>
+
+            <!-- Email -->
+            <div class="mb-3">
+              <label class="form-label">Email Address</label>
+              <input type="email" class="form-control" placeholder="Enter your email" required>
+            </div>
+
+            <!-- Phone -->
+            <div class="mb-3">
+              <label class="form-label">Phone Number</label>
+              <input type="tel" class="form-control" placeholder="Enter your phone number" required>
+            </div>
+
+            <!-- Select Sport -->
+            <div class="mb-3">
+              <label class="form-label">Select Sport</label>
+              <select class="form-select" required>
+                <option value="">Choose a service</option>
+                <option>Rowing Training</option>
+                <option>Kayak Adventures</option>
+                <option>Stand Up Paddle (SUP)</option>
+                <option>Private Coaching</option>
+                <option>Equipment Rental</option>
+                <option>Fitness & Conditioning</option>
+              </select>
+            </div>
+
+            <!-- Select Date -->
+            <div class="mb-3">
+              <label class="form-label">Select Date</label>
+              <input type="date" class="form-control" required>
+            </div>
+
+            <!-- Select Time -->
+            <div class="mb-4">
+              <label class="form-label">Select Time</label>
+              <select class="form-select" required>
+                <option value="">Choose time</option>
+                <option>8:00 AM - 10:00 AM</option>
+                <option>10:00 AM - 12:00 PM</option>
+                <option>2:00 PM - 4:00 PM</option>
+                <option>4:00 PM - 6:00 PM</option>
+              </select>
+            </div>
+
+            <!-- Submit -->
+            <button type="submit" class="btn btn-book w-100">
+              Confirm Booking
+            </button>
+
+          </form>
+
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= FOOTER ================= -->
+
+<footer class="bg-dark text-white text-center py-4">
+  <p class="mb-0">© 2026 Rowin Academy. All rights reserved.</p>
+</footer>
+
+<script src="js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
     <!-- FOOTER -->
     <footer class="footer">
       <div class="footer-container">
