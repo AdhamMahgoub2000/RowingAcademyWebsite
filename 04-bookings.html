@@ -178,25 +178,25 @@
             <!-- Full Name -->
             <div class="mb-3">
               <label class="form-label">Full Name</label>
-              <input type="text" class="form-control" placeholder="Enter your full name" required>
+              <input type="text" id="fullName" class="form-control" required>
             </div>
 
             <!-- Email -->
             <div class="mb-3">
               <label class="form-label">Email Address</label>
-              <input type="email" class="form-control" placeholder="Enter your email" required>
+              <input type="email" id="email" class="form-control" required>
             </div>
 
             <!-- Phone -->
             <div class="mb-3">
               <label class="form-label">Phone Number</label>
-              <input type="tel" class="form-control" placeholder="Enter your phone number" required>
+              <input type="tel" id="phone" class="form-control" required>
             </div>
 
             <!-- Select Sport -->
             <div class="mb-3">
               <label class="form-label">Select Sport</label>
-              <select class="form-select" required>
+              <select id="sport" class="form-select" required>
                 <option value="">Choose a service</option>
                 <option>Rowing Training</option>
                 <option>Kayak Adventures</option>
@@ -210,20 +210,20 @@
             <!-- Select Date -->
             <div class="mb-3">
               <label class="form-label">Select Date</label>
-              <input type="date" class="form-control" required>
+              <input type="date" id="date" class="form-control" required>
             </div>
 
             <!-- Select Time -->
-            <div class="mb-4">
+             <div class="mb-4">
               <label class="form-label">Select Time</label>
-              <select class="form-select" required>
-                <option value="">Choose time</option>
-                <option>8:00 AM - 10:00 AM</option>
-                <option>10:00 AM - 12:00 PM</option>
-                <option>2:00 PM - 4:00 PM</option>
-                <option>4:00 PM - 6:00 PM</option>
+              <select id="time" class="form-select" required>
+              <option value="">Choose time</option>
+              <option value="8:00 AM - 10:00 AM">8:00 AM - 10:00 AM</option>
+              <option value="10:00 AM - 12:00 PM">10:00 AM - 12:00 PM</option>
+              <option value="2:00 PM - 4:00 PM">2:00 PM - 4:00 PM</option>
+              <option value="4:00 PM - 6:00 PM">4:00 PM - 6:00 PM</option>
               </select>
-            </div>
+</div>
 
             <!-- Submit -->
             <button type="submit" class="btn btn-book w-100">
@@ -325,3 +325,56 @@
     <script src="js/auth.js"></script>
   </body>
 </html>
+    <!-- Bootstrap JS -->
+    <script src="js/bootstrap.bundle.min.js"></script>
+
+    <!-- Supabase Library -->
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+
+    <!-- Booking Script -->
+    <script>
+    const supabaseKey = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Iml1YXh5cWVna3dkYXJkdnp2bmFqIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NzE2MzQyODgsImV4cCI6MjA4NzIxMDI4OH0.NV7UDAYiIh7azUL25TfFWlilwAIFyjUwkQxyf3CSKAk";
+    const supabase = supabase.createClient(supabaseUrl, supabaseKey);
+    const SUPABASE_URL = "https://iuaxyqegkwdardvzvnaj.supabase.co";
+
+document.getElementById("bookingForm").addEventListener("submit", async function(e) {
+    e.preventDefault();
+
+    const bookingData = {
+        full_name: document.querySelector("#fullName").value,
+        email: document.querySelector("#email").value,
+        phone: document.querySelector("#phone").value,
+        sport: document.querySelector("#sport").value,
+        date: document.querySelector("#date").value,
+        time: document.querySelector("#time").value
+    };
+
+    try {
+        const response = await fetch(`${SUPABASE_URL}/rest/v1/bookings`, {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json",
+                "apikey": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Iml1YXh5cWVna3dkYXJkdnp2bmFqIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NzE2MzQyODgsImV4cCI6MjA4NzIxMDI4OH0.NV7UDAYiIh7azUL25TfFWlilwAIFyjUwkQxyf3CSKAk",
+                "Authorization": `Bearer ${SUPABASE_ANON_KEY}`,
+                "Prefer": "return=minimal"
+            },
+            body: JSON.stringify(bookingData)
+        });
+
+        if (!response.ok) {
+            const errorData = await response.json();
+            console.log(errorData);
+            alert("❌ Error submitting booking");
+            return;
+        }
+
+        alert("✅ Booking submitted successfully!");
+        document.getElementById("bookingForm").reset();
+
+    } catch (error) {
+        console.error(error);
+        alert("❌ Network error");
+    }
+});
+</script>
+      
