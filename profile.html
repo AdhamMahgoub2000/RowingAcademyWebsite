@@ -53,7 +53,7 @@
               >
             </li>
             <li class="nav-item">
-              <a class="nav-link active" href="04-bookings.html">Bookings</a>
+              <a class="nav-link" href="04-bookings.html">Bookings</a>
             </li>
             <li class="nav-item">
               <a class="nav-link" href="05-contact.html">Contact Us</a>
@@ -80,9 +80,7 @@
               </a>
               <ul class="dropdown-menu">
                 <li class="dropdown-item">
-                  <a
-                    href="profile.html"
-                    style="color: black; text-decoration: none"
+                  <a href="" class="logout-btn" style="color: black"
                     >View Profile
                   </a>
                 </li>
@@ -112,7 +110,64 @@
         </div>
       </div>
     </nav>
-    <!-- FOOTER -->
+<section class="container my-5">
+      <div class="row">
+        <div class="col-2">
+          <i
+            class="fa-solid fa-circle-user"
+            style="width: 10rem; height: auto"
+          ></i>
+        </div>
+        <div class="col-6">
+          <h1 id="profile-name"></h1>
+          <p id="profile-email" style="opacity: 0.6"></p>
+          <p id="profile-number" style="opacity: 0.6"></p>
+          <p id="upcoming-sessions" style="opacity: 0.6"></p>
+        </div>
+      </div>
+    </section>
+    <!-- Upcoming Sessions -->
+    <section class="container p-5">
+      <div class="card shadow-sm">
+        <div class="card-header">
+          <h4 class="fw-medium">Upcoming Bookings</h4>
+        </div>
+        <div class="card-body table-responsive">
+          <table class="table table-hover" id="upcoming">
+            <thead class="table-dark">
+              <tr>
+                <th>#</th>
+                <th>Session Type</th>
+                <th>Session Date</th>
+                <th>Session Time</th>
+              </tr>
+            </thead>
+            <tbody></tbody>
+          </table>
+        </div>
+      </div>
+    </section>
+    <!-- ALL Sessions -->
+    <section class="container p-5">
+      <div class="card shadow-sm">
+        <div class="card-header">
+          <h4 class="fw-medium">All Bookings</h4>
+        </div>
+        <div class="card-body table-responsive">
+          <table class="table table-hover" id="allBookings">
+            <thead class="table-dark">
+              <tr>
+                <th>#</th>
+                <th>Session Type</th>
+                <th>Session Date</th>
+                <th>Session Time</th>
+              </tr>
+            </thead>
+            <tbody></tbody>
+          </table>
+        </div>
+      </div>
+    </section>
     <footer class="footer">
       <div class="footer-container">
         <!-- Column 1 -->
@@ -184,9 +239,12 @@
         © 2026 Rowin Academy. All rights reserved.
       </div>
     </footer>
+    <script>
 
+    </script>
     <script src="js/bootstrap.bundle.min.js"></script>
     <script src="js/all.min.js"></script>
     <script src="js/auth.js"></script>
+    <script src="js/profile.js"></script>
   </body>
 </html>

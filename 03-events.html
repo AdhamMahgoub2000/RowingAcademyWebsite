@@ -13,23 +13,23 @@
       rel="stylesheet"
     />
     <style>
-.events {
-  position: relative;
-  height: 25rem;
-  overflow: hidden;
-}
+      .events {
+        position: relative;
+        height: 25rem;
+        overflow: hidden;
+      }
 
-.events::before {
-  content: "";
-  position: absolute;
-  inset: 0;
-  background: 
-    linear-gradient(rgba(1, 1, 1, 0.516), rgba(0, 0, 0, 0.043)),
-    url("images/olympix2.JPG") center/cover no-repeat; 
-  filter: blur(2px); 
-  z-index: -1;
-  /* opacity: 0.6;  */
-}
+      .events::before {
+        content: "";
+        position: absolute;
+        inset: 0;
+        background:
+          linear-gradient(rgba(1, 1, 1, 0.516), rgba(0, 0, 0, 0.043)),
+          url("images/olympix2.JPG") center/cover no-repeat;
+        filter: blur(2px);
+        z-index: -1;
+        /* opacity: 0.6;  */
+      }
     </style>
   </head>
   <body>
@@ -102,6 +102,13 @@
               </a>
               <ul class="dropdown-menu">
                 <li class="dropdown-item">
+                  <a
+                    href="profile.html"
+                    style="color: black; text-decoration: none"
+                    >View Profile
+                  </a>
+                </li>
+                <li class="dropdown-item">
                   <a href="" class="logout-btn" style="color: black"
                     >Logout
                     <i class="fa fa-sign-out" style="color: black"></i>
@@ -129,10 +136,12 @@
     </nav>
 
     <!-- Landing Section -->
-    <section class="container-fluid landing d-flex align-items-center mr-5 events">
+    <section
+      class="container-fluid landing d-flex align-items-center mr-5 events"
+    >
       <div class="text-left m-5" style="width: 80%">
         <h1 class="fw-semibold">Our Events & Adventures</h1>
-        <p style="width: 70%; font-size: 1rem;">
+        <p style="width: 70%; font-size: 1rem">
           Beyond daily training, we organize spectacular team building
           activities, host premier competitions, and travel for unforgettable
           rowing trips across Egypt.
