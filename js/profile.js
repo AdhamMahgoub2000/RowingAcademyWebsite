@@ -1,7 +1,7 @@
-let SUPABASE_URL = "https://iuaxyqegkwdardvzvnaj.supabase.co";
+let SUPABASE_URL = "https://mkxzgvwvftzimaugwzvn.supabase.co";
 let bookings_api_url = `${SUPABASE_URL}/rest/v1/Bookings`;
 
-let booking_apikey = "sb_publishable_Z9rbaeVLnJQaHElivJa8MA_l_qJ7fh_";
+let booking_apikey = "sb_publishable_EY8_jS3efnS8mEt2aFGoHA_gDkN6K8v";
 
 let headers_booking = {
   apikey: booking_apikey,
@@ -14,7 +14,16 @@ document.addEventListener("DOMContentLoaded", async function(){
        let currentPage = window.location.pathname.split("/").pop();
         window.location.href = "login.html?redirect=" + currentPage;
     }else{
-document.getElementById("profile-name").textContent=my_user.name
+// Display full name
+let fullName;
+if (my_user.fname && my_user.lname) {
+  fullName = `${my_user.fname} ${my_user.lname}`;
+} else if (my_user.fname) {
+  fullName = my_user.fname;
+} else {
+  fullName = "";
+}
+document.getElementById("profile-name").textContent = fullName;
 document.getElementById("profile-email").textContent=my_user.email_address
 document.getElementById("profile-number").textContent=my_user.mobile_number
 let [myUpcoming, mySessions] = await getSessions();
@@ -29,7 +38,7 @@ loadBookingstable(mySessions,"allBookings")
 let getSessions = async function () {
   try {
     const user_sessions_url =
-      bookings_api_url + "?Email=eq." + my_user.email_address;
+      bookings_api_url + "?email_address=eq." + my_user.email_address;
 
     let sessions = await fetch(user_sessions_url, {
       method: "GET",
@@ -40,7 +49,7 @@ let getSessions = async function () {
     const today = new Date();
 
     let myUpcoming = mySessions.filter(
-      b => new Date(b.date) >= today
+      b => new Date(b.session_date) >= today
     );
 
     return [myUpcoming, mySessions];
@@ -61,9 +70,9 @@ function createBookingRow(index, booking) {
   const tr = document.createElement("tr");
   tr.innerHTML = `
     <td>${index + 1}</td>
-    <td>${booking.Sport}</td>
-    <td>${booking.date} </td>
-    <td>${booking.Time} </td>
+    <td>${booking.session_type}</td>
+    <td>${booking.session_date} </td>
+    <td>${booking.session_time} </td>
   `;
   return tr;
 }

@@ -26,12 +26,25 @@
           </div>
           <span id="email_error_register"></span>
           <div class="mb-3">
-            <label class="form-label">Full Name</label>
+            <label class="form-label">First Name</label>
             <input
               type="text"
               class="form-control"
-              id="name_register"
-              placeholder="ex: Adham Mahgoub...."
+              id="fname_register"
+              title="First Name"
+              placeholder="ex: Adham"
+              required
+            />
+          </div>
+          <div class="mb-3">
+            <label class="form-label">Last Name</label>
+            <input
+              type="text"
+              class="form-control"
+              id="lname_register"
+              title="Last Name"
+              placeholder="ex: Mahgoub"
+              required
             />
           </div>
           <div class="mb-3">
@@ -141,7 +154,8 @@
           event.preventDefault();
 
           let emailInput = document.getElementById("email_register");
-          let nameInput = document.getElementById("name_register");
+          let fnameInput = document.getElementById("fname_register");
+          let lnameInput = document.getElementById("lname_register");
           let numberInput = document.getElementById("number_register");
           let passwordInput = document.getElementById("password_register");
 
@@ -160,7 +174,8 @@
           addUser(
             emailInput.value,
             numberInput.value,
-            nameInput.value,
+            fnameInput.value,
+            lnameInput.value,
             passwordInput.value,
           );
         });

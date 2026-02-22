@@ -174,7 +174,7 @@
             let userData = await getUserdataEmail(emailInput.value);
             let user = userData[0];
 
-            Errorspan(`Welcome ${user.name}`, passwordError, "green");
+            Errorspan(`Welcome ${user.fname}`, passwordError, "green");
 
             const params = new URLSearchParams(window.location.search);
             let redirectURL = params.get("redirect")

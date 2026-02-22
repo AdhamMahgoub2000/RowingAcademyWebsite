@@ -24,7 +24,9 @@ function updateAuthUI() {
 
     if (profileDropdown) profileDropdown.style.display = "inline-block";
 
-    if (userNameSpan) userNameSpan.textContent = `Hello, ${user.name}`;
+    if (userNameSpan) {
+      userNameSpan.textContent = `Hello, ${user.fname}`;
+    }
         if (profileLink) {
         if (user.email_address === "admin@rowin.com") {
             profileLink.href = "dashboard.html";
@@ -114,7 +116,7 @@ let checkUserpass = async function (email_entered, password_entered) {
   return false;
 };
 
-let addUser = async function(email,number,name, password){
+let addUser = async function(email,number,fname, lname, password){
     let emailError = document.getElementById("email_error_register");
     let passwordError = document.getElementById("password_error_register");
     let numberError = document.getElementById("number_error_register");
@@ -137,13 +139,14 @@ let addUser = async function(email,number,name, password){
                 email_address: email,
                 password: password,
                 mobile_number:number,
-                name:name
+                fname:fname,
+                lname:lname
 
             })
     });
     if (response.ok) {
      let newUser = await getUserdataEmail(email);
-     Errorspan(`welcome ${name}`,passwordError,"green")
+     Errorspan(`welcome ${fname}`,passwordError,"green")
      saveLoginSuccess(newUser[0],"01-home.html");
      console.log("Redirecting to home page in 2 seconds...");
     } else {

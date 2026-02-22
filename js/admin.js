@@ -1,7 +1,7 @@
-let SUPABASE_URL = "https://iuaxyqegkwdardvzvnaj.supabase.co";
+let SUPABASE_URL = "https://mkxzgvwvftzimaugwzvn.supabase.co";
 let bookings_api_url = `${SUPABASE_URL}/rest/v1/Bookings`;
 
-let booking_apikey = "sb_publishable_Z9rbaeVLnJQaHElivJa8MA_l_qJ7fh_";
+let booking_apikey = "sb_publishable_EY8_jS3efnS8mEt2aFGoHA_gDkN6K8v";
 
 let headers_booking = {
   apikey: booking_apikey,
@@ -33,11 +33,11 @@ function createBookingRow(index, booking) {
   const tr = document.createElement("tr");
   tr.innerHTML = `
     <td>${index + 1}</td>
-    <td>${booking.full_name}</td>
-    <td>${booking.Email}</td>
-    <td>${booking.Phone_Number}</td>
-    <td>${booking.Sport}</td>
-    <td>${booking.date} ${booking.Time}</td>
+    <td>${booking.name || 'N/A'}</td>
+    <td>${booking.email_address}</td>
+    <td>${booking.mobile_number}</td>
+    <td>${booking.session_type}</td>
+    <td>${booking.session_date} ${booking.session_time}</td>
   `;
   return tr;
 }
@@ -51,11 +51,11 @@ async function loadBookings() {
     const bookings = await res.json();
     document.getElementById("totalBookings").textContent = bookings.length;
     
-    const uniqueMembers = new Set(bookings.map(b => b.Email));
+    const uniqueMembers = new Set(bookings.map(b => b.email_address));
     document.getElementById("activeMembers").textContent = uniqueMembers.size;
 
     const today = new Date();
-    const upcoming = bookings.filter(b => new Date(b.date) >= today);
+    const upcoming = bookings.filter(b => new Date(b.session_date) >= today);
     document.getElementById("upcomingSessions").textContent = upcoming.length;
 
     const tbody = document.querySelector("#bookingTable tbody");
