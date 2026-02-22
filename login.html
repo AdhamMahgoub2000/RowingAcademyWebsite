@@ -161,7 +161,6 @@
           emailError.hidden = true;
           passwordError.hidden = true;
 
-          // Check if credentials are correct
           let user_auth = await checkUserpass(
             emailInput.value,
             passwordInput.value,
@@ -172,24 +171,20 @@
           } else if (!user_auth) {
             Errorspan("Password Is Wrong", passwordError);
           } else {
-            // --- LOGIN SUCCESSFUL ---
             let userData = await getUserdataEmail(emailInput.value);
             let user = userData[0];
 
             Errorspan(`Welcome ${user.name}`, passwordError, "green");
 
-            // 1. Get the normal redirect URL (like '04-bookings.html' or '01-home.html')
             const params = new URLSearchParams(window.location.search);
             let redirectURL = params.get("redirect")
               ? decodeURIComponent(params.get("redirect"))
               : "01-home.html";
 
-            // 2. ADMIN OVERRIDE: If the user is the Admin, force them to the dashboard!
             if (user.email_address === "admin@rowin.com") {
               redirectURL = "dashboard.html";
             }
 
-            // 3. Save the data properly
             if (rememberMe) {
               localStorage.setItem("user", JSON.stringify(user));
               localStorage.setItem("isLoggedIn", "true");
@@ -198,7 +193,6 @@
               sessionStorage.setItem("isLoggedIn", "true");
             }
 
-            // 4. Send them to their destination
             setTimeout(() => {
               window.location.href = redirectURL;
             }, 2000);
