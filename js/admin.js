@@ -1,5 +1,13 @@
-const bookings_api_url = api_url + "Bookings";
+let SUPABASE_URL = "https://iuaxyqegkwdardvzvnaj.supabase.co";
+let bookings_api_url = `${SUPABASE_URL}/rest/v1/Bookings`;
 
+let booking_apikey = "sb_publishable_Z9rbaeVLnJQaHElivJa8MA_l_qJ7fh_";
+
+let headers_booking = {
+  apikey: booking_apikey,
+  Authorization: `Bearer ${booking_apikey}`,
+  "Content-Type": "application/json",
+};
 document.addEventListener("DOMContentLoaded", function () {
     let isLoggedIn = localStorage.getItem("isLoggedIn") || sessionStorage.getItem("isLoggedIn");
     let userData = localStorage.getItem("user") || sessionStorage.getItem("user");
@@ -25,26 +33,29 @@ function createBookingRow(index, booking) {
   const tr = document.createElement("tr");
   tr.innerHTML = `
     <td>${index + 1}</td>
-    <td>${booking.name}</td>
-    <td>${booking.email_address}</td>
-    <td>${booking.mobile_number}</td>
-    <td>${booking.session_type}</td>
-    <td>${booking.session_date} ${booking.session_time}</td>
+    <td>${booking.full_name}</td>
+    <td>${booking.Email}</td>
+    <td>${booking.Phone_Number}</td>
+    <td>${booking.Sport}</td>
+    <td>${booking.date} ${booking.Time}</td>
   `;
   return tr;
 }
 
 async function loadBookings() {
   try {
-    const res = await fetch(bookings_api_url, { headers });
+      const res = await fetch(bookings_api_url, {
+      method: "GET",
+      headers: headers_booking
+      });
     const bookings = await res.json();
     document.getElementById("totalBookings").textContent = bookings.length;
     
-    const uniqueMembers = new Set(bookings.map(b => b.email_address));
+    const uniqueMembers = new Set(bookings.map(b => b.Email));
     document.getElementById("activeMembers").textContent = uniqueMembers.size;
 
     const today = new Date();
-    const upcoming = bookings.filter(b => new Date(b.session_date) >= today);
+    const upcoming = bookings.filter(b => new Date(b.date) >= today);
     document.getElementById("upcomingSessions").textContent = upcoming.length;
 
     const tbody = document.querySelector("#bookingTable tbody");
