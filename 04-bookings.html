@@ -166,7 +166,7 @@
       .sport-option.selected {
         border-color: #2563eb;
         background: linear-gradient(135deg, #eff6ff 0%, #f0f7ff 100%);
-        box-shadow: 0 6px 20px rgba(37, 99, 235, 0.15);
+        /* box-shadow: 0 6px 20px rgba(37, 99, 235, 0.15); */
         transform: translateY(-2px);
       }
 
@@ -243,23 +243,23 @@
         transition: all 0.2s ease;
         font-weight: 500;
         font-size: 14px;
-        color: #4b5563;
+        /* color: #4b5563; */
         text-transform: capitalize;
       }
 
       .level-option label:hover {
-        background: #f3f4f6;
+        /* background: #f3f4f6; */
         border-color: #2563eb;
         color: #2563eb;
         transform: translateY(-2px);
-        box-shadow: 0 2px 8px rgba(37, 99, 235, 0.1);
+        /* box-shadow: 0 2px 8px rgba(37, 99, 235, 0.1); */
       }
 
       .level-option input[type="radio"]:checked + label {
         background: #2563eb;
         border-color: #2563eb;
         color: white;
-        box-shadow: 0 4px 12px rgba(37, 99, 235, 0.3);
+        /* box-shadow: 0 4px 12px rgba(37, 99, 235, 0.3); */
       }
 
       .quantity-btn {
@@ -537,7 +537,8 @@
                     <h4 class="mb-4">Step 1: Choose Your Sport</h4>
 
                     <!-- Rowing Option -->
-                    <div class="sport-option" data-sport="rowing">
+                    <div class="sport-option d-block" data-sport="rowing">
+                      <div class="d-flex align-items-center gap-3">
                       <input
                         type="radio"
                         name="sport"
@@ -548,7 +549,7 @@
                       <label for="sport-rowing">
                         <span>Rowing</span>
                         <small class="text-muted d-block" style="font-weight: 400; font-size: 13px; margin-top: 4px;">Choose your skill level</small>
-                      </label>
+                      </label></div>
                       <div class="level-options" id="rowing-levels">
                         <div class="level-option">
                           <input

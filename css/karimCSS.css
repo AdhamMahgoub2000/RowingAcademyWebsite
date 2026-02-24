@@ -63,7 +63,7 @@ body {
 .hero {
     height: 90vh;
     background: linear-gradient(rgba(37,99,235,0.7), rgba(15,23,42,0.7)),
-                url("https://cairogyms.com/wp-content/uploads/2020/02/IMG_1025.jpg");
+                url("../images/cover3.jpeg");
     background-size: cover;
     background-position: center;
     display: flex;

@@ -105,7 +105,7 @@ document.addEventListener("DOMContentLoaded", function () {
           label.style.background = "#2563eb";
           label.style.borderColor = "#2563eb";
           label.style.color = "white";
-          label.style.boxShadow = "0 4px 12px rgba(37, 99, 235, 0.3)";
+          label.style.boxShadow = "0 4px 12px rgba(37, 99, 235, 0.3)"; 
         }
       }
     });
